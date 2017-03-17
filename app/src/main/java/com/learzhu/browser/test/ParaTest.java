@@ -13,6 +13,7 @@ public class ParaTest {
     public static void main(String args[]) {
         test();
         test(true);
+        test1(true);
     }
 
     public static void test(boolean... x) {
@@ -22,4 +23,9 @@ public class ParaTest {
         System.out.println("test" + x);
     }
 
+
+    public static void test1(boolean... y) {
+        test(y);
+        test();
+    }
 }
