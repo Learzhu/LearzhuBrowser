@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+    <!-- 数据库名 -->
+    <dbname value="JYBrowser"/>
+    <!-- 数据库版本号 -->
+    <version value="40"/>
+    <!-- 数据库表 -->
+    <list>
+        <mapping class="cn.zhangyoukeji.browser.jisou.model.table.BookmarkTable"/>
+        <mapping class="cn.zhangyoukeji.browser.jisou.model.table.CollectionTable"/>
+        <mapping class="cn.zhangyoukeji.browser.jisou.model.table.HistoryTable"/>
+        <mapping class="cn.zhangyoukeji.browser.jisou.model.table.InputHistoryTable"/>
+        <mapping class="cn.zhangyoukeji.browser.jisou.model.table.DownloadTable"/>
+        <mapping class="cn.zhangyoukeji.browser.jisou.model.table.NewsClickedTable"/>
+        <mapping class="cn.zhangyoukeji.browser.jisou.model.table.HotNewsTable"/>
+        <mapping class="cn.zhangyoukeji.browser.jisou.model.table.ComedyPositiveTable"/>
+        <mapping class="cn.zhangyoukeji.browser.jisou.model.table.ComedyNegativeTable"/>
+        <mapping class="cn.zhangyoukeji.browser.jisou.model.table.CommentPraiseTable"/>
+        <mapping class="cn.zhangyoukeji.browser.jisou.model.table.CoolWebsiteTable"/>
+        <mapping class="cn.zhangyoukeji.browser.jisou.model.table.AdvertiseAppTable"/>
+        <mapping class="cn.zhangyoukeji.browser.jisou.model.table.CategoryTable"/>
+        <mapping class="cn.zhangyoukeji.browser.jisou.model.table.AnchorTable"/>
+        <mapping class="cn.zhangyoukeji.browser.jisou.model.table.PushMessageInfoListBeanTable"/>
+        <mapping class="cn.zhangyoukeji.browser.jisou.model.bean.PushMessageInfoListBean"/>
+        <mapping class="cn.zhangyoukeji.browser.jisou.model.bean.NewsListBean"/>
+    </list>
+
+</litepal>
