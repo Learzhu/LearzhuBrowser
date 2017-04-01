@@ -22,4 +22,21 @@
         android:layout_height="wrap_content"
         android:text="AAAAAAAAAAA"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#F4F5F7"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#f7f7f7"/>
+    </LinearLayout>
 </RelativeLayout>
