@@ -23,7 +23,8 @@ public class TestTime {
     private static SimpleDateFormat detailDateFormatWithYear = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.CHINA);
 
     //    static String time = "2015-03-12 17:30:30";
-    static String time = "20150312173030";
+//    static String time = "20150312173030";
+    static String time = "20170406173030";
 
     public static void main(String args[]) {
         System.out.println("time----" + time);
@@ -31,6 +32,7 @@ public class TestTime {
         System.out.println("getYearsAgoPublishTime()" + getYearsAgoPublishTime(time));
         System.out.println("getPublishTimeFormatted()" + getPublishTimeFormatted(time));
         System.out.println("getYearNow--" + getYearNow());
+        System.out.println("getBetweenDays--" + getBetweenDays());
         getTimeDiff();
     }
 
@@ -93,5 +95,20 @@ public class TestTime {
     public static void getTimeDiff() {
         long l = System.currentTimeMillis();
         System.out.println(l);
+    }
+
+    public static String getBetweenDays() {
+        try {
+            Date pubDate = format.parse(time);
+            Date nowDate = new Date();
+            nowDate.setTime(System.currentTimeMillis());
+            long between = nowDate.getTime() - pubDate.getTime();
+            int day = (int) (between / (24 * 60 * 60 * 1000));
+            int dateBetween = nowDate.getDate() - pubDate.getDate();
+            return dateBetween == 1 ? "昨天" : dateBetween + "";
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return "";
     }
 }
