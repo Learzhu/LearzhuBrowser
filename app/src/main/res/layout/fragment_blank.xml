@@ -2,6 +2,7 @@
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
+             tools:background="@color/colorAccent"
              tools:context="com.learzhu.browser.fragment.BlankFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -9,9 +10,63 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorAccent"
-        android:lineSpacingExtra="10dp"
         android:text="@string/hello_blank_fragment"
         tools:targetApi="M"
-        tools:text="AAAAAAAAAAAAAAAAAAAAAAAABBBBBBBBBBBBBBBBBBBCCCCCCCCCCCAAAAAAAAAAAAAAAAAAAAAAAABBBBBBBBBBBBBBBBBBBCCCCCCCCCCC"/>
+        tools:text="aaaaaa\r\njjjhhhh\r"
+        tools:visibility="gone"/>
 
+    <!--tools:text="AAAAAAAAAAAAAAAAAAAAAAAABBBBBBBBBBBBBBBBBBB/nCCCCCCCCCCCAAAAAAAAAAAAAAAAAAAAAAAABBBBBBBBBBBBBBBBBBBCCCCCCCCCCC"/>-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ff895544"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/test_shadow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:shadowColor="#ff000000"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="1"
+            android:text="Test Shadow"
+            android:textColor="#ffffffff"
+            android:textSize="60sp"/>
+
+        <TextView
+            android:id="@+id/test_shadow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:shadowColor="#ff000000"
+            android:shadowDx="10"
+            android:shadowDy="10"
+            android:shadowRadius="1"
+            android:text="Test Shadow"
+            android:textColor="#ffffffff"
+            android:textSize="60sp"/>
+
+        <TextView
+            android:id="@+id/test_shadow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:shadowColor="#ff000000"
+            android:shadowDx="30"
+            android:shadowDy="30"
+            android:shadowRadius="1"
+            android:text="Test Shadow"
+            android:textColor="#ffffffff"
+            android:textSize="60sp"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/shadow"
+        android:text="我是中国人"/>
 </FrameLayout>

@@ -8,22 +8,20 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.PowerManager;
-import android.provider.ContactsContract;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 
 import com.learzhu.browser.R;
 import com.learzhu.browser.broadreceiver.ScreenBroadcastReceiver;
 import com.learzhu.browser.fragment.BlankFragment;
 import com.learzhu.browser.fragment.ItemFragment;
-import com.learzhu.browser.fragment.MainActivityFragment;
 import com.learzhu.browser.utils.StatusBarUtil;
 
 public class MainActivity extends AppCompatActivity implements BlankFragment.OnFragmentInteractionListener {
@@ -44,9 +42,9 @@ public class MainActivity extends AppCompatActivity implements BlankFragment.OnF
         mFragmentTransaction1 = getSupportFragmentManager().beginTransaction();
 //        MainActivityFragment mainActivityFragment = new MainActivityFragment();
 
-//        BlankFragment blankFragment = new BlankFragment();
-//        mFragmentTransaction1.add(R.id.fragment, blankFragment);
-//        mFragmentTransaction1.commit();
+        BlankFragment blankFragment = new BlankFragment();
+        mFragmentTransaction1.add(R.id.fragment, blankFragment);
+        mFragmentTransaction1.commit();
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
