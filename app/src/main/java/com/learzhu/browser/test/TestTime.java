@@ -1,5 +1,6 @@
 package com.learzhu.browser.test;
 
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -21,10 +22,43 @@ public class TestTime {
     public static SimpleDateFormat weatherDayFormat = new SimpleDateFormat("yyyyMMdd", Locale.CHINA);
     private static SimpleDateFormat detailDateFormat = new SimpleDateFormat("MM-dd HH:mm", Locale.CHINA);
     private static SimpleDateFormat detailDateFormatWithYear = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.CHINA);
+    private static SimpleDateFormat dateFormatyyyyMMdd10 = new SimpleDateFormat("yyyy-MM-dd", Locale.CHINA);
+
+    /**
+     * yyyy-MM-dd格式化对象。
+     */
+    private static final DateFormat yyyyMMdd10Df = new SimpleDateFormat("yyyy-MM-dd");
+
+    /**
+     * 以yyyy-MM-dd格式，把字符串日期转化为日期对象。
+     *
+     * @param strDate 字符串日期
+     * @return 日期对象
+     */
+    public synchronized static Date parseByyyyyMMdd10(String strDate) {
+        try {
+            return yyyyMMdd10Df.parse(strDate);
+        } catch (ParseException e) {
+            // 忽略;
+        }
+        return null;
+    }
+
+    /**
+     * 以yyyy-MM-dd格式，格式化日期对象。
+     *
+     * @param date 日期对象
+     * @return yyyy-MM-dd格式的日期字符串
+     */
+    public synchronized static String formatByyyyyMMdd10(Date date) {
+        return yyyyMMdd10Df.format(date);
+    }
+
 
     //    static String time = "2015-03-12 17:30:30";
 //    static String time = "20150312173030";
     static String time = "20170406173030";
+    static String time1 = "20170503094607";
 
     public static void main(String args[]) {
         System.out.println("time----" + time);
@@ -34,6 +68,8 @@ public class TestTime {
         System.out.println("getYearNow--" + getYearNow());
         System.out.println("getBetweenDays--" + getBetweenDays());
         getTimeDiff();
+
+        System.out.println("getTimeyyyyMMdd10--" + getTimeyyyyMMdd10(time));
     }
 
     public static String getPublishTimeFormatted(String pubTime) {
@@ -79,6 +115,21 @@ public class TestTime {
         try {
             Date pubDate = format.parse(pubTime);
             str = detailDateFormatWithYear.format(pubDate);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+
+    /**
+     * @param pubTime
+     * @return
+     */
+    public static String getTimeyyyyMMdd10(String pubTime) {
+        String str = "";
+        try {
+            Date pubDate = format.parse(pubTime);
+            str = dateFormatyyyyMMdd10.format(pubDate);
         } catch (ParseException e) {
             e.printStackTrace();
         }
