@@ -16,10 +16,20 @@ public class SpliteTest {
 
     private static boolean isOk;
 
+    private static int x = 15_000;
+    private static int y = 15 / 000;
+
     public static void main(String args[]) {
         String[] split = testString.split("1", 1);
-        int x = Integer.MAX_VALUE;
+//        int x = Integer.MAX_VALUE;
         System.out.println(x);
         System.out.println(isOk);
+        System.out.println(" 15_000== 15    " + (x == 15));
+        System.out.println("x = 15_000=" + x);
+        System.out.println("15_000-1=    " + (x - 1));
+        System.out.println("Integer.MAX_VALUE" + Integer.MAX_VALUE);
+        System.out.println("Integer.MAX_VALUE=x" + (Integer.MAX_VALUE == x));
+        System.out.println("y=" + y);
+        System.out.println("y=" + y / 1);
     }
 }
