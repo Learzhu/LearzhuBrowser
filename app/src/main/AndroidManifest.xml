@@ -17,11 +17,11 @@
             android:label="@string/app_name"
             android:launchMode="singleTask"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+            <!--<intent-filter>-->
+            <!--<action android:name="android.intent.action.MAIN"/>-->
 
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
+            <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--</intent-filter>-->
         </activity>
         <activity
             android:name=".activity.PopuWindowActivity"
@@ -29,6 +29,12 @@
             android:launchMode="singleInstance"
             android:taskAffinity=""
             android:theme="@android:style/Theme.Wallpaper.NoTitleBar">
+            <!--<extradata>-->
+            <!--<item name="foo" value="bar"/>-->
+            <!--</extradata>-->
+            <!--<meta-data-->
+            <!--android:name="webPage"-->
+            <!--android:value="mykey123"/>-->
         </activity>
 
         <receiver
@@ -53,6 +59,13 @@
         <activity android:name=".activity.Main3Activity">
         </activity>
         <activity android:name=".activity.ImageActivity">
+        </activity>
+        <activity android:name=".activity.AnimActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
     </application>
 

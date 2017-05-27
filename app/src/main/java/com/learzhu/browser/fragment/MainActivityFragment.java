@@ -2,20 +2,18 @@ package com.learzhu.browser.fragment;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
-import android.content.Context;
 import android.content.Intent;
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.learzhu.browser.R;
-import com.learzhu.browser.activity.Main3Activity;
+import com.learzhu.browser.activity.AnimActivity;
 import com.learzhu.browser.utils.ToastUtil;
 
 import java.util.ArrayList;
@@ -55,7 +53,8 @@ public class MainActivityFragment extends Fragment {
             public void onClick(View v) {
                 ToastUtil.showShortToast(getContext(), "AA");
 //                mView.setBackgroundResource(android.R.color.transparent);
-                startActivity(new Intent((getActivity()), Main3Activity.class));
+//                startActivity(new Intent((getActivity()), Main3Activity.class));
+                startActivity(new Intent((getActivity()), AnimActivity.class));
             }
         });
         mTextView2.setOnClickListener(new View.OnClickListener() {

@@ -24,5 +24,6 @@ public class TestNumber {
         l = (float) i / j;
         System.out.println(l);
         System.out.println("% " + NumberFormat.getPercentInstance().format(l));
+        System.out.println(Integer.MAX_VALUE);
     }
 }
