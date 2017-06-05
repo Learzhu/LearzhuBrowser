@@ -1,5 +1,7 @@
 package com.learzhu.browser.test;
 
+import static com.learzhu.browser.utils.StringUtils.getTwoSpaces;
+
 /**
  * ${className}.java是极搜浏览器的$DES$类。
  *
@@ -18,6 +20,19 @@ public class StringBlankSpaceTest {
             "　　年轻人总是喜欢刺激，易云也是，中规中矩的去爬那些被人为开发的旅游山没什么意思，他们就选择了一座人迹罕至的荒山。\n" +
             "　　爬到荒山的半山腰，他们发现了一个山洞。";
 
+    private static String testString1 = "“当然算数，不过考中童生太难。”方运无奈地说。\n" +
+            "　　“我相信我们家小运一定能！不仅能当童生，一定还能中秀才，说不定能当上举人老爷！”\n" +
+            "　　方运微微一愣，才反应过来，杨玉环这不是在没话找话，是听到他刚才叹气，故意开解他。\n" +
+            "　　方运不能让她担心，笑道：“如果我能中童生，那一定是玉环姐的功劳，到了那时候，我一定把玉环姐供起来，天天让你好吃好喝，然后让你天天说我能中秀才。等中了秀才，就让你天天说我能中举人！”\n" +
+            "　　杨玉环忍不住轻声笑起来，露出洁白的牙齿。\n" +
+            "　　“小运，你好像变了个人似的。”杨玉环看着方运，隐隐有些担忧。\n" +
+            "　　\n" +
+            "　　";
+
+    private static String testString2 = "“小运，你好像变了个人似的。”杨玉环看着方运，隐隐有些担忧。\n" +
+            "　　\n" +
+            "　　";
+
     public static void main(String args[]) {
         System.out.println("1. String.trim() " + testString.trim());
         System.out.println("2. str.replace(\" \", \"\"); " + testString.replace(" ", ""));
@@ -25,6 +40,26 @@ public class StringBlankSpaceTest {
         System.out.println("4. str = .replaceAll(\"\\\\s*\", \"\")" + testString.replaceAll("\\s*", ""));
         System.out.println("5. remove(String resource, char ch)" + remove(testString, (char) (12288)));
         System.out.println("6. removeBlank(String testString)" + removeBlank(testString));
+        System.out.println("7. formatContent(String testString)" + formatContent(testString2));
+    }
+
+    public static String formatContent(String str) {
+        str = str.replaceAll("[ ]*", "");//替换来自服务器上的，特殊空格
+        str = str.replaceAll("[ ]*", "");//
+        str = str.replaceAll("　", "");
+        str = str.replaceAll((char) 12288 + "", "");
+        str = str.replace("\n\n", "\n");
+        //替换中文的空格
+        //每段换行空两格
+        str = str.replace("\n", "\n" + getTwoSpaces());
+        //整章开始空两格
+        str = getTwoSpaces() + str;
+//        str = convertToSBC(str);
+        //去除最后的换行和空格
+        if (str.lastIndexOf("\n"+getTwoSpaces())==str.length()-3&&str.length()>3) {
+            str = str.substring(0, str.length() - 3);
+        }
+        return str;
     }
 
     public static String removeBlank(String testString) {

@@ -46,6 +46,7 @@ public class ListUnionIntersection {
 //        listUnionIntersection.print(listUnionIntersection.getSub());
         System.out.println("---------------交集");
         listUnionIntersection.print(listUnionIntersection.getIntersection());
+        listUnionIntersection.mList1.subList(1, 1);
     }
 
     public void print(List<Integer> list) {
