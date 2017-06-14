@@ -1,5 +1,7 @@
 package com.learzhu.browser.test;
 
+import org.apache.commons.lang3.StringUtils;
+
 import static com.learzhu.browser.utils.StringUtils.getTwoSpaces;
 
 /**
@@ -31,7 +33,7 @@ public class StringBlankSpaceTest {
 
     private static String testString2 = "“小运，你好像变了个人似的。”杨玉环看着方运，隐隐有些担忧。\n" +
             "　　\n" +
-            "　　";
+            "　　"+"  ";
 
     public static void main(String args[]) {
         System.out.println("1. String.trim() " + testString.trim());
@@ -41,6 +43,7 @@ public class StringBlankSpaceTest {
         System.out.println("5. remove(String resource, char ch)" + remove(testString, (char) (12288)));
         System.out.println("6. removeBlank(String testString)" + removeBlank(testString));
         System.out.println("7. formatContent(String testString)" + formatContent(testString2));
+        System.out.println("8. StringUtils.deleteWhitespace(testString2)" + StringUtils.deleteWhitespace(testString2));
     }
 
     public static String formatContent(String str) {
@@ -56,7 +59,7 @@ public class StringBlankSpaceTest {
         str = getTwoSpaces() + str;
 //        str = convertToSBC(str);
         //去除最后的换行和空格
-        if (str.lastIndexOf("\n"+getTwoSpaces())==str.length()-3&&str.length()>3) {
+        if (str.lastIndexOf("\n" + getTwoSpaces()) == str.length() - 3 && str.length() > 3) {
             str = str.substring(0, str.length() - 3);
         }
         return str;
@@ -87,4 +90,5 @@ public class StringBlankSpaceTest {
         }
         return buffer.toString();
     }
+
 }
