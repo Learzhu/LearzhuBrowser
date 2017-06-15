@@ -22,6 +22,7 @@ public class CollectionTest {
         collectionTest.init();
         collectionTest.ifStringConatin();
         collectionTest.ifAContain();
+        collectionTest.subList();
     }
 
     public void init() {
@@ -32,6 +33,10 @@ public class CollectionTest {
 
         mList1.add(new A("AA", 1));
         mList1.add(new A("BB", 2));
+    }
+
+    public List<String> subList() {
+        return mList.subList(0, 3);
     }
 
     public void ifStringConatin() {
