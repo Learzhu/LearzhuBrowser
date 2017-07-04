@@ -15,9 +15,14 @@ import com.learzhu.browser.utils.StringUtils;
 
 public class StringTest {
     static String str = "  我是中国人";
+    static String str1 = "A我是中国人";
+    static String str2 = "A";
 
     public static void main(String args[]) {
         //替换空格之后
         System.out.println("++++++" + StringUtils.formatContent(str));
+        System.out.println(str1.concat("A"));
+        System.out.println(str1.contains("A"));
+        System.out.println(str2.contains("AA"));
     }
 }

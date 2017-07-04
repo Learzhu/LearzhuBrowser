@@ -8,6 +8,7 @@
         android:id="@+id/headera_tv"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:ellipsize="end"
         android:text="AAAAAAAAAAAAAAAAAAAAAAAA"
         android:visibility="visible"/>
 
