@@ -20,6 +20,8 @@ android {
         }
     }
 
+    //在API 23中，Google已经移除了移除了Apache HttpClient相关的类 。谷歌推荐使用HttpUrlConnection，如果要继续使用需要Apache HttpClient
+    useLibrary 'org.apache.http.legacy'
     buildTypes {
         release {
             minifyEnabled false
@@ -62,11 +64,11 @@ dependencies {
     compile 'com.android.support:support-v4:25.2.0'
     compile 'com.android.support:recyclerview-v7:25.2.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
-//    compile 'org.apache.commons.commons-lang3:3.6'
+    //    compile 'org.apache.commons.commons-lang3:3.6'
     compile 'org.apache.commons:commons-lang3:3.6'
-
     compile 'com.squareup.retrofit:converter-jackson:2.0.0-beta2'
-
     testCompile 'junit:junit:4.12'
     compile files('guava-18.0.jar')
+    //导入用于解析HTML
+    compile 'org.jsoup:jsoup:1.10.3'
 }
