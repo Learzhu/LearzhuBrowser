@@ -21,7 +21,7 @@ public class JsonTest {
         List<ChapterBean> list = new ArrayList<>();
         //新建对象放到集合中
 //        for (int i = 0; i < 1000000; i++) {
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 3000; i++) {
             ChapterBean chapterBean = new ChapterBean();
             chapterBean.chapterId = i;
             list.add(chapterBean);
@@ -30,23 +30,25 @@ public class JsonTest {
         System.out.println("start: transform list to json start " + System.currentTimeMillis());
         try {
             string = JacksonJsonUtil.pojo2json(list);
-            System.out.println("result : " + string);
+//            System.out.println("result : " + string);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println("start: transform list to json end" + System.currentTimeMillis());
+        System.out.println("start: transform list to json end  " + System.currentTimeMillis());
+        System.out.println();
         System.out.println("start: transform json to list start" + System.currentTimeMillis());
-
         try {
             ArrayList<ChapterBean> chapterBeenList = JacksonJsonUtil.json2pojoList(string, ChapterBean.class);
-            System.out.println("start: transform json to list end" + System.currentTimeMillis());
+            System.out.println("start: transform json to list end  " + System.currentTimeMillis());
+            System.out.println();
+            System.out.println("getBean success      start       " + System.currentTimeMillis());
             for (ChapterBean chapterBean :
                     chapterBeenList) {
-                if (chapterBean.chapterId == 500) {
+                if (chapterBean.chapterId == 3000) {
                     break;
                 }
             }
-            System.out.println("getBean success " + System.currentTimeMillis());
+            System.out.println("getBean success      end         " + System.currentTimeMillis());
         } catch (IOException e) {
             e.printStackTrace();
         }
