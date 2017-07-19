@@ -51,12 +51,13 @@ public class MainActivityFragment extends Fragment {
         mTextView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ToastUtil.showShortToast(getContext(), "AA");
+                ToastUtil.showShortToast(getContext(), "跳转到动画页");
 //                mView.setBackgroundResource(android.R.color.transparent);
 //                startActivity(new Intent((getActivity()), Main3Activity.class));
                 startActivity(new Intent((getActivity()), AnimActivity.class));
             }
         });
+        //修改第三部分的颜色
         mTextView2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
