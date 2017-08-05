@@ -25,5 +25,21 @@ public class TestNumber {
         System.out.println(l);
         System.out.println("% " + NumberFormat.getPercentInstance().format(l));
         System.out.println(Integer.MAX_VALUE);
+
+        short s1 = 1;
+        s1 = (short) (s1 + 1);
+
+        ok:
+        for (int m = 0; m < 100; m++) {
+            ok1:
+            for (int n = 0; n < 4; n++) {
+                if (n == 2) {
+                    continue ok1;
+                }
+            }
+            if (m == 5) {
+                break ok;
+            }
+        }
     }
 }

@@ -1,4 +1,4 @@
-package com.learzhu.browser.test;
+package com.learzhu.browser.test.thread;
 
 /**
  * ${className}.java是极搜浏览器的$DES$类。

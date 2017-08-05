@@ -14,6 +14,10 @@ import static com.learzhu.browser.test.Constants.PRODUCE_SERVER;
 
 public abstract class AbstractClass {
 
+    static {
+        int x = 1;
+    }
+
     public static String PUSHTAG = getString();
 
     public static String getString() {
