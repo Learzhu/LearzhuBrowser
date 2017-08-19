@@ -1,7 +1,5 @@
 package com.learzhu.browser;
 
-import android.util.Log;
-
 import com.learzhu.browser.utils.Md5Utils;
 
 /**
@@ -17,8 +15,8 @@ public class MD5Test {
     private static final String TAG = "MD5Test";
 
     public static void main(String args[]) {
-        Log.i(TAG, "main: mString" + mString);
+//        Log.i(TAG, "main: mString" + mString);
         String s = Md5Utils.MD5Encode(mString, "UTF-8", true);
-        Log.i(TAG, "main: result " + s);
+//        Log.i(TAG, "main: result " + s);
     }
 }

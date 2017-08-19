@@ -22,7 +22,7 @@ public class MD5Test {
     public static void main(String args[]) {
         System.out.println("main: mString" + mString);
         String s = Md5Utils.MD5Encode(mString, "UTF-8", true);
-//        Log.i(TAG, "main: result " + s);
+//        LogTest.i(TAG, "main: result " + s);
         System.out.println("main: result " + s);
         try {
             String s1 = MD5Util.parseToMd5String(mString);

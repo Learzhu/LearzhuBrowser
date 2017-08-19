@@ -152,15 +152,15 @@ public class AnimActivity extends AppCompatActivity {
 ////                mRightIv.layout(400 - value, 50, 400 + mRightIv.getWidth() - value, mRightIv.getHeight() + 50);
 //
 //                mLeftIv.layout(value, mLeftIv.getTop(), mLeftIv.getWidth() + value, mLeftIv.getTop() + mLeftIv.getHeight());
-//                Log.d(TAG, "mLeftIv l:" + value + "  t:" + value + " r:" + (mLeftIv.getWidth() + value) + " b:" + (mLeftIv.getTop() + mLeftIv.getHeight()));
+//                LogTest.d(TAG, "mLeftIv l:" + value + "  t:" + value + " r:" + (mLeftIv.getWidth() + value) + " b:" + (mLeftIv.getTop() + mLeftIv.getHeight()));
 //
 ////                mRightIv.layout(mRightIv.getRight() - value - mRightIv.getWidth(), mRightIv.getTop(), mRightIv.getRight() - value, mRightIv.getHeight() + mRightIv.getTop());
 //                mRight = mBobbleRl.getRight();
-//                Log.d(TAG, "onAnimationUpdate: mRight" + mRight);
+//                LogTest.d(TAG, "onAnimationUpdate: mRight" + mRight);
 //
 //                mRightIv.layout(mRight - value - mRightIv.getWidth(), mRightIv.getTop(), mRight - value, mRightIv.getHeight() + mRightIv.getTop());
-////                Log.d(TAG, "mRightIv l:" + (mRightIv.getRight() - value - mRightIv.getWidth() + "") + "  t:" + mRightIv.getTop() + " r:" + (mRightIv.getRight() - value) + " b:" + (mRightIv.getHeight() + mRightIv.getTop()));
-//                Log.d(TAG, "mRightIv l:" + (mRight - value - mRightIv.getWidth() + "") + "  t:" + mRightIv.getTop() + " r:" + ( mRight  - value) + " b:" + (mRightIv.getHeight() + mRightIv.getTop()));
+////                LogTest.d(TAG, "mRightIv l:" + (mRightIv.getRight() - value - mRightIv.getWidth() + "") + "  t:" + mRightIv.getTop() + " r:" + (mRightIv.getRight() - value) + " b:" + (mRightIv.getHeight() + mRightIv.getTop()));
+//                LogTest.d(TAG, "mRightIv l:" + (mRight - value - mRightIv.getWidth() + "") + "  t:" + mRightIv.getTop() + " r:" + ( mRight  - value) + " b:" + (mRightIv.getHeight() + mRightIv.getTop()));
 //            }
 //        });
 //        moveAnimator.setRepeatCount(10);

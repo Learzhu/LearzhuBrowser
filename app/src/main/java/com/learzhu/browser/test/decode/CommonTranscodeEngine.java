@@ -1,6 +1,6 @@
 //package com.learzhu.browser.test.decode;
 //
-//import android.util.Log;
+//import android.util.LogTest;
 //
 //import com.zhangyou.domain.NovelContentAfterTranscode;
 //
@@ -98,7 +98,7 @@
 //                    }
 //                }
 //            } catch (Exception e) {
-//                Log.e(TAG, "transcodeNovelContentUrl error: " + e.toString());
+//                LogTest.e(TAG, "transcodeNovelContentUrl error: " + e.toString());
 //            }
 //
 //        } while (false);
@@ -137,7 +137,7 @@
 //                    resultElement = elements.get(novelParseNode.getNodeIndex());
 //                }
 //            } catch (Exception e) {
-//                Log.w(TAG, "findElementByNovelParseNode error: " + e.toString());
+//                LogTest.w(TAG, "findElementByNovelParseNode error: " + e.toString());
 //            }
 //
 //
