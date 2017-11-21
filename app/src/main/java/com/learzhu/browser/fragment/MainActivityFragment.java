@@ -2,7 +2,9 @@ package com.learzhu.browser.fragment;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -51,6 +53,7 @@ public class MainActivityFragment extends Fragment {
         mTextView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                testSP();
                 ToastUtil.showShortToast(getContext(), "跳转到动画页");
 //                mView.setBackgroundResource(android.R.color.transparent);
 //                startActivity(new Intent((getActivity()), Main3Activity.class));
@@ -68,6 +71,13 @@ public class MainActivityFragment extends Fragment {
         mListView.addHeaderView(headerView);
         initAdapter();
         return view;
+    }
+
+    private void testSP() {
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("AA", Context.MODE_PRIVATE);
+        sharedPreferences.edit().putString("BB", "XXX").commit();
+        SharedPreferences sharedPreferences1 = getActivity().getApplicationContext().getSharedPreferences("AA", Context.MODE_PRIVATE);
+        String bb = sharedPreferences1.getString("BB", "");
     }
 
     private void initAdapter() {

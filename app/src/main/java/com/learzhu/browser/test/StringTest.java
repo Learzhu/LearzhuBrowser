@@ -24,5 +24,9 @@ public class StringTest {
         System.out.println(str1.concat("A"));
         System.out.println(str1.contains("A"));
         System.out.println(str2.contains("AA"));
+        System.out.println("-------------------");
+        if ("1".equals(1)) {
+            System.out.println("success000000");
+        }
     }
 }
