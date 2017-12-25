@@ -2,6 +2,7 @@ package com.learzhu.browser.utils;
 
 import java.text.DateFormat;
 import java.text.ParseException;
+import java.text.ParsePosition;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -526,4 +527,138 @@ public class DateUtil {
         }
     }
 
+
+    /**
+     * 获取现在时间
+     *
+     * @return返回短时间格式 yyyy-MM-dd
+     */
+    public static Date getFormatDate(Date date) {
+        SimpleDateFormat formatter = new SimpleDateFormat(FORMAT_DATE);
+        String dateString = formatter.format(date);
+        ParsePosition pos = new ParsePosition(8);
+        Date currentTime_2 = formatter.parse(dateString, pos);
+        return currentTime_2;
+    }
+
+    /**
+     * 获取现在时间
+     *
+     * @return返回短时间格式 yyyy-MM-dd
+     */
+    public static Date getNowDateShort() {
+        Date currentTime = new Date();
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        String dateString = formatter.format(currentTime);
+        ParsePosition pos = new ParsePosition(8);
+        Date currentTime_2 = formatter.parse(dateString, pos);
+        return currentTime_2;
+    }
+
+//    public static Date getFormatShortDate(Date date1) {
+//        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//        Date date = (Date) formatter.parse(str);
+//
+//        SimpleDateFormat sdf = new SimpleDateFormat(FORMAT_DATE);
+//        java.util.Date date = new Date(date1.getTime() * 1000);
+//        String str = sdf.format(date);
+//        System.out.println(str);
+//    }
+
+
+    /**
+     * 获取现在时间
+     *
+     * @return返回短时间格式 yyyy-MM-dd
+     */
+    public static Date getFormatShortDate1(Date date) {
+        SimpleDateFormat formatter = new SimpleDateFormat(FORMAT_DATE);
+        String dateString = formatter.format(date);
+//        ParsePosition pos = new ParsePosition(8);
+//        Date currentTime_2 = formatter.parse(dateString, pos);
+        Date currentTime_2 = null;
+        try {
+            currentTime_2 = formatter.parse(dateString);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return currentTime_2;
+    }
+
+    /**
+     * 获取短格式类型的Date
+     *
+     * @return返回短时间格式 yyyy-MM-dd
+     */
+    public static String getFormatShortDate(Date date) {
+        SimpleDateFormat formatter = new SimpleDateFormat(FORMAT_DATE);
+        return formatter.format(date);
+    }
+
+    public static Date getDate() {
+        Date currentTime = new Date();
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        String dateString = formatter.format(currentTime);
+        ParsePosition pos = new ParsePosition(0);
+        Date datetime = formatter.parse(dateString, pos);
+        java.sql.Timestamp ts = null;
+        if (datetime != null) {
+            ts = new java.sql.Timestamp(datetime.getTime());
+        }
+        return ts;
+    }
+
+
+    /**
+     * Date -> Timestamp
+     * 父类不能直接向子类转化，可借助中间的String~~~~
+     * java.sql.Date 只存储日期数据不存储时间数据
+     *
+     * @param date
+     * @return
+     */
+//    public static Date getShortDate(Date date) {
+//        java.sql.Date date1 = new java.sql.Date();
+//        PreparedStatement preparedStatement = new PreparedStatement() {
+//        };
+//        // 会丢失时间数据
+//        preparedStatement.setDate(1, new java.sql.Date(date.getTime()));
+////可以这样来处理
+//        preparedStatement.setTimestamp(1, new java.sql.Timestamp(new java.util.Date().getTime()));
+////想要得到完整的数据，包括日期和时间，可以这样
+//        java.util.Date d = resultSet.getTimestamp(1);
+////这样处理更合适一些，可以避免一些潜在Timestamp 问题
+//        java.util.Date d = new java.util.Date(resultSet.getTimestamp(1).getTime());
+//    }
+    public static Date getFormatShortDate2() {
+        Date currentTime = new Date();
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        String dateString = formatter.format(currentTime);
+        ParsePosition pos = new ParsePosition(0);
+        Date datetime = formatter.parse(dateString, pos);
+        java.sql.Timestamp ts = null;
+        if (datetime != null) {
+            ts = new java.sql.Timestamp(datetime.getTime());
+        }
+        String format = formatter.format(ts);
+        Date parse = formatter.parse(format, new ParsePosition(0));
+        return parse;
+    }
+
+//    public void timestampConvertString() {
+//        SimpleDateFormat sdf = new SimpleDateFormat(FORMAT_DATE);
+//        Timestamp currentTime = new Timestamp(System.currentTimeMillis());
+//        String timeStr = sdf.format(currentTime);
+//        System.out.println(timeStr);
+//    }
+
+    /**
+     * 获取短格式类型的Date
+     *
+     * @return返回短时间格式 yyyy-MM-dd
+     */
+    public static String getFormatShortDateX(Date date) {
+        SimpleDateFormat formatter = new SimpleDateFormat(FORMAT_DATE);
+        return formatter.format(date);
+    }
 }
