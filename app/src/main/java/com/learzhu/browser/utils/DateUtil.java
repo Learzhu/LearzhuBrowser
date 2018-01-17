@@ -25,6 +25,8 @@ public class DateUtil {
     public final static String TYPE_DATETIME = "datetime";
     public final static String TYPE_DATE_TIME = "date_time";
     public final static String TYPE_TIME = "time";
+    public static final SimpleDateFormat sformat3 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
+
     /**
      * 日期排序类型-升序
      */
@@ -660,5 +662,15 @@ public class DateUtil {
     public static String getFormatShortDateX(Date date) {
         SimpleDateFormat formatter = new SimpleDateFormat(FORMAT_DATE);
         return formatter.format(date);
+    }
+
+    /**
+     * 获取时间戳
+     *
+     * @param date 当前的时间
+     * @return 时间戳 "timestamp":"2017-07-08 12:12:12.123"
+     */
+    public static String getTimestamp(Date date) {
+        return sformat3.format(date);
     }
 }

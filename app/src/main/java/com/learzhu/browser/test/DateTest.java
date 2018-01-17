@@ -19,7 +19,7 @@ import java.util.Date;
  */
 public class DateTest {
     public static void main(String args[]) {
-
+        System.out.println(DateUtil.getTimestamp(new Date()));
         System.out.println(Integer.MAX_VALUE);
         //        testTime();
         Calendar selectedDate = Calendar.getInstance();
