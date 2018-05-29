@@ -3,12 +3,11 @@ package com.learzhu.browser.test;
 import com.learzhu.browser.utils.DateUtil;
 import com.learzhu.browser.utils.DateUtil1;
 
-import org.json.JSONArray;
-
 import java.math.BigDecimal;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
+
+import static com.learzhu.browser.utils.DateUtil.FORMAT_DATETIME;
 
 /**
  * DateTest.java是液总汇的类。
@@ -32,6 +31,15 @@ public class DateTest {
         System.out.println(string.split(string));
 
         testJsonArray();
+        testAfter();
+
+        testNum();
+    }
+
+    private static void testAfter() {
+        String time1 = "2017-11-02 14:35:08";
+        String time2 = "2017-11-03 14:35:08";
+        System.out.println(DateUtil.after(time1, time2, FORMAT_DATETIME));
     }
 
     private static void testJsonArray() {
@@ -53,10 +61,10 @@ public class DateTest {
                 "]";
 
         // 转换方法1
-        JSONArray array = JSONArray.fromObject("[{'name':'hehe','age':22}]");
-        JSONArray array1 = new JSONArray();
-        List<ExpressBean> list = JSONArray.toList(array, ExpressBean.class);// 过时方法
-        System.out.println(list.get(0).getName());
+//        JSONArray array = JSONArray.fromObject("[{'name':'hehe','age':22}]");
+//        JSONArray array1 = new JSONArray();
+//        List<ExpressBean> list = JSONArray.toList(array, ExpressBean.class);// 过时方法
+//        System.out.println(list.get(0).getName());
 
         // 转换方法2
 //        List<?> list2 = JSONArray.toList(array, new ExpressBean(), new JsonConfig());//参数1为要转换的JSONArray数据，参数2为要转换的目标数据，即List盛装的数据
@@ -95,9 +103,9 @@ public class DateTest {
 //        String format = "AA%f%n";
 //        String format = "AA%f";
 //        String result = String.format(format, 2, 2, 2.0333);
-        String result = String.format(format, 2, 2, 2.3);
+        String result = String.format(format, 2, 2, 2.0);
 //        String result = String.format(format, 2.19);
-        System.out.println(result);
+        System.out.println("result----------" + result);
         double ff = 2.0000d * 4.013;
         System.out.println(ff);
 
