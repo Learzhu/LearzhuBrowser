@@ -16,7 +16,7 @@
         android:id="@+id/headerb_tv"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="BBBBBBBBBBBBBBBBBBBBBBBBBBBB"
+        android:text="将Excel 写入到SQLite"
         android:visibility="visible"/>
 
     <View

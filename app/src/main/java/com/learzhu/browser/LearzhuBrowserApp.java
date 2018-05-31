@@ -4,6 +4,8 @@ import android.app.Application;
 import android.content.Context;
 import android.support.multidex.MultiDex;
 
+import org.litepal.LitePal;
+
 /**
  * LearzhuBrowserApp.java是极搜浏览器的类。
  *
@@ -12,8 +14,6 @@ import android.support.multidex.MultiDex;
  * @update UserName 2017/2/21
  * @updateDes
  */
-
-
 public class LearzhuBrowserApp extends Application {
     @Override
     protected void attachBaseContext(Context base) {
@@ -25,6 +25,7 @@ public class LearzhuBrowserApp extends Application {
     public void onCreate() {
         super.onCreate();
 //        MultiDex.install(this);
+        LitePal.initialize(this);
     }
     //    public static final String KEY_DEX2_SHA1 = "dex2-SHA1-Digest";
 //    @Override
