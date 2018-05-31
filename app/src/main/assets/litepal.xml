@@ -9,7 +9,7 @@
     	<dbname value="demo" />
     -->
     <!-- 数据库名 -->
-    <dbname value="Express100"/>
+    <dbname value="express100"/>
     <!--
     	Define the database name of your application.
     	By default each database name should be end with .db.
