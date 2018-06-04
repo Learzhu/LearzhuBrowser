@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,6 +43,8 @@ public class MainActivityFragment extends Fragment {
     private TextView mTextView1, mTextView2;
 
     private View mView;
+
+    private static final String TAG = "MainActivityFragment";
 
     public MainActivityFragment() {
     }
@@ -124,13 +127,16 @@ public class MainActivityFragment extends Fragment {
      */
     private void insertExpressBeans(Sheet sheet) {
         // 4 遍历标本的每一行
-        for (int i = 1; i < sheet.getRows(); i++) {
+        int rows = sheet.getRows();
+        ToastUtil.showLongToast(getContext(), "一共" + rows + "行");
+        Log.e(TAG, "insertExpressBeans: " + rows);
+        for (int i = 1; i < rows; i++) {
             ExpressBean expressBean = new ExpressBean();
             expressBean.setComName(sheet.getCell(0, i).getContents());
             expressBean.setComCode(sheet.getCell(1, i).getContents());
-            expressBean.setIntroductions(sheet.getCell(2, i).getContents());
-            expressBean.setType(sheet.getCell(3, i).getContents());
-            expressBean.setCountryCode(sheet.getCell(4, i).getContents());
+//            expressBean.setIntroductions(sheet.getCell(2, i).getContents());
+//            expressBean.setType(sheet.getCell(3, i).getContents());
+//            expressBean.setCountryCode(sheet.getCell(4, i).getContents());
             expressBean.save();
         }
 //        for (int j = 1; j < sheet.getRows(); ++j) {
