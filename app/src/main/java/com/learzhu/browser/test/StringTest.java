@@ -24,6 +24,7 @@ public class StringTest {
             "}";
     static String str4 = "aaasssbbbb";
 
+    static String filePath = "/storage/emulated/0/Tencent/QQfile_recv/客服头像@3X.png";
     /**
      * result : false
      * returnCode : 500
@@ -46,6 +47,14 @@ public class StringTest {
         }
         System.out.println(str3.contains("查询失败"));
         System.out.println(str4.toUpperCase());
+        System.out.println(testFilePath(filePath));
+        testEqual();
+    }
+
+    private static void testEqual() {
+        String money1 = "￥";
+        String money2 = "¥";
+        System.out.println("money test: " + money1 + " " + money2 + money1.equals(money2));
     }
 
 
@@ -71,5 +80,25 @@ public class StringTest {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public static String testFilePath(String filePath) {
+        String[] split = splitPoint(filePath);
+        //避免URL 的特殊字符重新取名
+        StringBuilder fileName = new StringBuilder();
+        if (split != null && split.length > 1) {
+            fileName.append("AA").append("avatar.").append(split[1]);
+        } else {
+            fileName.append("BB").append("avatar.jpg");
+        }
+        return String.valueOf(fileName);
+    }
+
+    /**
+     * @param string 待分割的字符串
+     * @return
+     */
+    public static String[] splitPoint(String string) {
+        return string.split("\\.");
     }
 }
