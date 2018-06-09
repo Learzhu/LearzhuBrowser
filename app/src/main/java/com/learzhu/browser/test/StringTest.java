@@ -49,6 +49,7 @@ public class StringTest {
         System.out.println(str4.toUpperCase());
         System.out.println(testFilePath(filePath));
         testEqual();
+        System.out.println(AA.class.getName());
     }
 
     private static void testEqual() {
@@ -100,5 +101,8 @@ public class StringTest {
      */
     public static String[] splitPoint(String string) {
         return string.split("\\.");
+    }
+
+    class AA {
     }
 }
