@@ -50,6 +50,12 @@ public class StringTest {
         System.out.println(testFilePath(filePath));
         testEqual();
         System.out.println(AA.class.getName());
+        testEqual1(null);
+    }
+
+    private static void testEqual1(String string) {
+        System.out.println(string.equals(null));
+        System.out.println(string == null);
     }
 
     private static void testEqual() {
