@@ -50,7 +50,14 @@ public class StringTest {
         System.out.println(testFilePath(filePath));
         testEqual();
         System.out.println(AA.class.getName());
-        testEqual1(null);
+//        testEqual1(null);
+        testSplit();
+    }
+
+    private static void testSplit() {
+        String string = "http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKv70k5kDVSLbwibibLsdYUUO8OcUm5gic08V2CWkZgD2KP1iaqm5sXvbHqDAusXSuaic990jvESbPEvSQ/0";
+        String[] split = string.split(",");
+        System.out.println(split.length);
     }
 
     private static void testEqual1(String string) {
