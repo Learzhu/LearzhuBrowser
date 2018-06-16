@@ -59,6 +59,9 @@ public class MainActivityFragment extends Fragment {
 //        View headerView = LayoutInflater.from(getActivity()).inflate(R.layout.layout_listview_header, null);
         mTextView1 = (TextView) headerView.findViewById(R.id.headera_tv);
         mTextView2 = (TextView) headerView.findViewById(R.id.headerb_tv);
+        String s1 = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+        String s2 = "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB";
+        mTextView2.setText(s1 + ":" + s2);
         mView = headerView.findViewById(R.id.headerc);
         mTextView1.setOnClickListener(new View.OnClickListener() {
             @Override
