@@ -52,6 +52,21 @@ public class StringTest {
         System.out.println(AA.class.getName());
 //        testEqual1(null);
         testSplit();
+        testRemoveComma();
+        testFilePathPostfix();
+    }
+
+    private static void testFilePathPostfix() {
+        String test = "jpg、jpeg、gif、png、bmp";
+        System.out.println(test + "\n" + "jpg:contains:" + test.contains("jpg") + "jpeg:contains:" + test.contains("jpeg")
+                + "gif:contains:" + test.contains("gif") + "bmp:contains:" + test.contains("bmp"));
+    }
+
+    private static void testRemoveComma() {
+        String s1 = "";
+        String s2 = "AAAA,";
+        String s3 = "AAAA,BBBB";
+        System.out.println("testREmoveComma \n" + removeLlastComma(s1) + "\n" + removeLlastComma(s2) + "\n" + removeLlastComma(s3));
     }
 
     private static void testSplit() {
@@ -117,5 +132,23 @@ public class StringTest {
     }
 
     class AA {
+    }
+
+    /**
+     * 去除最后的逗号
+     *
+     * @param string 待处理的字符串
+     * @return
+     */
+    public static String removeLlastComma(String string) {
+        if (string == null || string.equals("")) {
+            return "";
+        }
+        //去除最后一个","
+        if (string.endsWith(",")) {
+            return string.substring(0, string.length() - 1);
+        } else {
+            return string;
+        }
     }
 }

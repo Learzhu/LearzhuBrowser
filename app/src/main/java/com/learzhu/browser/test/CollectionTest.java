@@ -1,7 +1,9 @@
 package com.learzhu.browser.test;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * ${className}.java是极搜浏览器的$DES$类。
@@ -23,6 +25,46 @@ public class CollectionTest {
         collectionTest.ifStringConatin();
         collectionTest.ifAContain();
         collectionTest.subList();
+        collectionTest.testEqual();
+    }
+
+    private void testEqual() {
+        List<Attr> list = new ArrayList<>();
+        list.add(new Attr("AA", "大"));
+        list.add(new Attr("AA", "小"));
+        list.add(new Attr("AA", "中"));
+        list.add(new Attr("BB", "XX"));
+        Set<String> attrValueIdsSet = new HashSet<String>();
+        for (Attr attr : list) {
+            attrValueIdsSet.add(attr.getAttr());
+        }
+        System.out.println("list.size() " + list.size() + " Set.size() " + attrValueIdsSet.size());
+    }
+
+    class Attr {
+        String attr;
+        String size;
+
+        public Attr(String attr, String size) {
+            this.attr = attr;
+            this.size = size;
+        }
+
+        public String getAttr() {
+            return attr;
+        }
+
+        public void setAttr(String attr) {
+            this.attr = attr;
+        }
+
+        public String getSize() {
+            return size;
+        }
+
+        public void setSize(String size) {
+            this.size = size;
+        }
     }
 
     public void init() {
