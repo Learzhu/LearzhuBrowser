@@ -54,6 +54,7 @@ public class StringTest {
         testSplit();
         testRemoveComma();
         testFilePathPostfix();
+        System.out.println("surfux: " + isAvailableImgSuffix("jpg.a"));
     }
 
     private static void testFilePathPostfix() {
@@ -150,5 +151,16 @@ public class StringTest {
         } else {
             return string;
         }
+    }
+
+    /**
+     * 微信的头像是没有后缀名的 容联云必须要求上传  jpg、jpeg、gif、png、bmp支持这几种的，
+     * 判断是否是微信的没有后缀名的图片
+     *
+     * @param absolutePath 图片文件的绝对路径
+     * @return
+     */
+    public static boolean isAvailableImgSuffix(String absolutePath) {
+        return absolutePath.contains("jpg") || absolutePath.contains("jpeg") || absolutePath.contains("gif") || absolutePath.contains("png") || absolutePath.contains("bmp");
     }
 }
