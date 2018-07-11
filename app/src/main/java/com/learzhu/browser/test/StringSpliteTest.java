@@ -1,5 +1,11 @@
 package com.learzhu.browser.test;
 
+import com.learzhu.browser.utils.ArrayUtils;
+import com.learzhu.browser.utils.ObjectUtils;
+import com.learzhu.browser.utils.StringUtils;
+
+import java.io.File;
+
 /**
  * ${className}.java是极搜浏览器的$DES$类。
  *
@@ -13,9 +19,21 @@ public class StringSpliteTest {
     private static String testString = null;
 //    private static String testString = "";
 
+    private static String testString1 = "AAAA" + File.separator + "BBB.jpg";
+
     public static void main(String args[]) {
-        String[] split = testString.split(",");
+//        String[] split = testString.split(",");
         //空的还1
-        System.out.println("splite---" + split.length);
+//        System.out.println("splite---" + split.length);
+        System.out.println(testString1);
+        String[] strings = StringUtils.splitSeparator(testString1);
+        if (ArrayUtils.isAvailable(strings)) {
+            String string = strings[strings.length - 1];
+            if (ObjectUtils.isObjectNotNull(string)) {
+                String[] strings1 = StringUtils.splitPoint(string);
+
+            }
+            System.out.println(string);
+        }
     }
 }

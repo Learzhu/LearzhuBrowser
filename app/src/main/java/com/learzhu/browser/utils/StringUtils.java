@@ -15,6 +15,8 @@
  */
 package com.learzhu.browser.utils;
 
+import java.io.File;
+
 /**
  * Created by lfh on 2016/9/10.
  */
@@ -58,4 +60,19 @@ public class StringUtils {
         return "\u3000\u3000";
     }
 
+    /**
+     * @param string 待分割的字符串
+     * @return
+     */
+    public static String[] splitPoint(String string) {
+        return string.split("\\.");
+    }
+
+    /**
+     * @param string 待分割的字符串
+     * @return
+     */
+    public static String[] splitSeparator(String string) {
+        return string.split(File.separator);
+    }
 }
