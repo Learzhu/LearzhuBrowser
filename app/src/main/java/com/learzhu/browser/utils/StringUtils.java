@@ -75,4 +75,11 @@ public class StringUtils {
     public static String[] splitSeparator(String string) {
         return string.split(File.separator);
     }
+
+    public static String getDateWithoutSec(String date) {
+        if (date == null || date.trim().equals("")) {
+            return "";
+        }
+        return String.valueOf(date.subSequence(0, date.lastIndexOf(":")));
+    }
 }
