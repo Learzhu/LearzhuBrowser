@@ -61,7 +61,8 @@ public class MainActivityFragment extends Fragment {
         mTextView2 = (TextView) headerView.findViewById(R.id.headerb_tv);
         String s1 = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
         String s2 = "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB";
-        mTextView2.setText(s1 + ":" + s2);
+//        mTextView2.setText(s1 + ":" + s2);
+        mTextView2.setText("执行将Excel写入到SQLite");
         mView = headerView.findViewById(R.id.headerc);
         mTextView1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,6 +79,7 @@ public class MainActivityFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 ToastUtil.showShortToast(getContext(), "执行将Excel写入到SQLite");
+                ToastUtil.showShortToast(getActivity(), "执行将Excel写入到SQLite");
                 mView.setBackgroundResource(R.color.colorAccent);
                 translateExcel2SQLite();
             }
@@ -131,7 +133,8 @@ public class MainActivityFragment extends Fragment {
     private void insertExpressBeans(Sheet sheet) {
         // 4 遍历标本的每一行
         int rows = sheet.getRows();
-        ToastUtil.showLongToast(getContext(), "一共" + rows + "行");
+//        ToastUtil.showLongToast(getContext(), "一共" + rows + "行");
+        ToastUtil.showLongToast(getActivity(), "一共" + rows + "行");
         Log.e(TAG, "insertExpressBeans: " + rows);
         for (int i = 1; i < rows; i++) {
             ExpressBean expressBean = new ExpressBean();
