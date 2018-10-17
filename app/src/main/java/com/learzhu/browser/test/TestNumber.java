@@ -18,6 +18,13 @@ public class TestNumber {
     static double l;
 
     public static void main(String args[]) {
+//        testNum();
+        System.out.println((int) 1.2);
+        System.out.println(Math.ceil(Math.abs(-1.2)));
+        System.out.println(Math.floor(1.2));
+    }
+
+    private static void testNum() {
         System.out.println(i / j);
         k = i / j;
         System.out.println(k);
