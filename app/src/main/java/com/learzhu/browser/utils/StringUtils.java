@@ -15,7 +15,10 @@
  */
 package com.learzhu.browser.utils;
 
+import android.text.TextUtils;
+
 import java.io.File;
+import java.util.ArrayList;
 
 /**
  * Created by lfh on 2016/9/10.
@@ -81,5 +84,22 @@ public class StringUtils {
             return "";
         }
         return String.valueOf(date.subSequence(0, date.lastIndexOf(":")));
+    }
+
+    public static ArrayList toStringList(String string) {
+        ArrayList arrayList = new ArrayList();
+        if (!TextUtils.isEmpty(string) && string.contains(",")) {
+            String[] split = string.split(",");
+            if (null != split && split.length > 0) {
+                for (String s : split) {
+                    if (!TextUtils.isEmpty(s)) {
+                        arrayList.add(s);
+                    }
+                }
+            }
+        } else if (!TextUtils.isEmpty(string)) {
+            arrayList.add(string);
+        }
+        return arrayList;
     }
 }
