@@ -18,13 +18,22 @@ public class TestNumber {
     static double l;
 
     public static void main(String args[]) {
-//        testNum();
+        testNumEqual();
+        //        testNum();
         System.out.println((int) 1.2);
         System.out.println(Math.ceil(Math.abs(-1.2)));
         System.out.println(Math.floor(1.2));
     }
 
+    private static void testNumEqual() {
+        Integer f1 = 100, f2 = 100, f3 = 150, f4 = 150;
+        System.out.println(f1 == f2);
+        System.out.println(f3 == f4);
+    }
+
     private static void testNum() {
+        float f = 3.4F;
+        float f1 = 3.4f;
         System.out.println(i / j);
         k = i / j;
         System.out.println(k);
