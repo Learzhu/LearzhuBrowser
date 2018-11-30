@@ -25,4 +25,11 @@
         android:layout_height="50dp"
         android:text="CCCCCCCCCCCCCCCCCCCCCC"
         android:visibility="visible"/>
+
+    <TextView
+        android:id="@+id/headerd_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="跳转到RecyclerView的界面"
+        android:visibility="visible"/>
 </LinearLayout>

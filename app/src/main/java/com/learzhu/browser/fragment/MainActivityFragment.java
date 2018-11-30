@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +18,8 @@ import android.widget.TextView;
 
 import com.learzhu.browser.R;
 import com.learzhu.browser.activity.AnimActivity;
+import com.learzhu.browser.activity.MainActivity;
+import com.learzhu.browser.activity.RecyclerViewActivity;
 import com.learzhu.browser.litepal.bean.ExpressBean;
 import com.learzhu.browser.utils.ToastUtil;
 
@@ -40,7 +43,7 @@ public class MainActivityFragment extends Fragment {
     ArrayAdapter adapter = null;
     ArrayList<String> list1 = new ArrayList<String>();
 
-    private TextView mTextView1, mTextView2;
+    private TextView mTextView1, mTextView2, mTextViewD;
 
     private View mView;
 
@@ -59,6 +62,7 @@ public class MainActivityFragment extends Fragment {
 //        View headerView = LayoutInflater.from(getActivity()).inflate(R.layout.layout_listview_header, null);
         mTextView1 = (TextView) headerView.findViewById(R.id.headera_tv);
         mTextView2 = (TextView) headerView.findViewById(R.id.headerb_tv);
+        mTextViewD = (TextView) headerView.findViewById(R.id.headerd_tv);
         String s1 = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
         String s2 = "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB";
 //        mTextView2.setText(s1 + ":" + s2);
@@ -80,8 +84,14 @@ public class MainActivityFragment extends Fragment {
             public void onClick(View v) {
                 ToastUtil.showShortToast(getContext(), "执行将Excel写入到SQLite");
                 ToastUtil.showShortToast(getActivity(), "执行将Excel写入到SQLite");
-                mView.setBackgroundResource(R.color.colorAccent);
+//                mView.setBackgroundResource(R.color.colorAccent);
                 translateExcel2SQLite();
+            }
+        });
+        mTextViewD.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                RecyclerViewActivity.actionStart(MainActivity.this);
             }
         });
         mListView.addHeaderView(headerView);

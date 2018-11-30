@@ -7,8 +7,8 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
 
-    <!--<uses-configuration android:reqNavigation="dpad"/>-->
-    <!--<uses-feature android:name=""/>-->
+    <!-- <uses-configuration android:reqNavigation="dpad"/> -->
+    <!-- <uses-feature android:name=""/> -->
     <application
         android:name=".LearzhuBrowserApp"
         android:allowBackup="true"
@@ -33,12 +33,13 @@
             android:launchMode="singleInstance"
             android:taskAffinity=""
             android:theme="@android:style/Theme.Wallpaper.NoTitleBar">
-            <!--<extradata>-->
-            <!--<item name="foo" value="bar"/>-->
-            <!--</extradata>-->
-            <!--<meta-data-->
-            <!--android:name="webPage"-->
-            <!--android:value="mykey123"/>-->
+
+            <!-- <extradata> -->
+            <!-- <item name="foo" value="bar"/> -->
+            <!-- </extradata> -->
+            <!-- <meta-data -->
+            <!-- android:name="webPage" -->
+            <!-- android:value="mykey123"/> -->
         </activity>
 
         <receiver
@@ -55,19 +56,22 @@
         <receiver
             android:name=".broadreceiver.ScreenBroadcastReceiver"
             android:enabled="true"
-            android:exported="true"></receiver>
+            android:exported="true"/>
 
-        <activity android:name=".activity.Main2Activity"></activity>
-        <activity android:name=".activity.Main3Activity"></activity>
-        <activity android:name=".activity.ImageActivity"></activity>
+        <activity android:name=".activity.Main2Activity"/>
+        <activity android:name=".activity.Main3Activity"/>
+        <activity android:name=".activity.ImageActivity"/>
         <activity android:name=".activity.ImageActivity1"/>
         <activity android:name=".activity.AnimActivity">
-            <!--<intent-filter>-->
-            <!--<action android:name="android.intent.action.MAIN"/>-->
 
-            <!--<category android:name="android.intent.category.LAUNCHER"/>-->
-            <!--</intent-filter>-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN"/> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER"/> -->
+            <!-- </intent-filter> -->
         </activity>
+        <activity android:name=".activity.RecyclerViewActivity"></activity>
     </application>
 
 </manifest>
