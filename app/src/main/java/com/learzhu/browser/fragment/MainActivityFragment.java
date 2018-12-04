@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,7 +17,6 @@ import android.widget.TextView;
 
 import com.learzhu.browser.R;
 import com.learzhu.browser.activity.AnimActivity;
-import com.learzhu.browser.activity.MainActivity;
 import com.learzhu.browser.activity.RecyclerViewActivity;
 import com.learzhu.browser.litepal.bean.ExpressBean;
 import com.learzhu.browser.utils.ToastUtil;
@@ -91,7 +89,7 @@ public class MainActivityFragment extends Fragment {
         mTextViewD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                RecyclerViewActivity.actionStart(MainActivity.this);
+                RecyclerViewActivity.actionStart(getActivity());
             }
         });
         mListView.addHeaderView(headerView);

@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.learzhu.browser.R
 
-class RecyclerViewActivity : AppCompatActivity() {
+class RecyclerViewActivity1 : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,9 +19,10 @@ class RecyclerViewActivity : AppCompatActivity() {
 //    }
     //companion object 的名字可以省略
     companion object {
+        @JvmStatic
         fun actionStart(context: Context) {
             var intent = Intent()
-            intent.setClass(context, RecyclerViewActivity::class.java)
+            intent.setClass(context, RecyclerViewActivity1::class.java)
             context.startActivity(intent)
         }
     }
