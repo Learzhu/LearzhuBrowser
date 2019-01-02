@@ -17,7 +17,9 @@ import android.widget.TextView;
 
 import com.learzhu.browser.R;
 import com.learzhu.browser.activity.AnimActivity;
+import com.learzhu.browser.activity.AsyncTaskActivity;
 import com.learzhu.browser.activity.RecyclerViewActivity;
+import com.learzhu.browser.activity.VlayoutRecyclerViewActivity;
 import com.learzhu.browser.litepal.bean.ExpressBean;
 import com.learzhu.browser.utils.ToastUtil;
 
@@ -41,7 +43,7 @@ public class MainActivityFragment extends Fragment {
     ArrayAdapter adapter = null;
     ArrayList<String> list1 = new ArrayList<String>();
 
-    private TextView mTextView1, mTextView2, mTextViewD;
+    private TextView mTextView1, mTextView2, mTextViewD, mTextViewE;
 
     private View mView;
 
@@ -61,6 +63,7 @@ public class MainActivityFragment extends Fragment {
         mTextView1 = (TextView) headerView.findViewById(R.id.headera_tv);
         mTextView2 = (TextView) headerView.findViewById(R.id.headerb_tv);
         mTextViewD = (TextView) headerView.findViewById(R.id.headerd_tv);
+        mTextViewE = (TextView) headerView.findViewById(R.id.headere_tv);
         String s1 = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
         String s2 = "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB";
 //        mTextView2.setText(s1 + ":" + s2);
@@ -90,6 +93,18 @@ public class MainActivityFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 RecyclerViewActivity.actionStart(getActivity());
+            }
+        });
+        mView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                VlayoutRecyclerViewActivity.actionStart(getActivity());
+            }
+        });
+        mTextViewE.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AsyncTaskActivity.actionStart(getActivity());
             }
         });
         mListView.addHeaderView(headerView);
