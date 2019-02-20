@@ -17,11 +17,16 @@ import android.widget.TextView;
 
 import com.learzhu.browser.R;
 import com.learzhu.browser.activity.AnimActivity;
-import com.learzhu.browser.activity.AsyncTaskActivity;
 import com.learzhu.browser.activity.RecyclerViewActivity;
 import com.learzhu.browser.activity.VlayoutRecyclerViewActivity;
+import com.learzhu.browser.event.AnimEvent;
+import com.learzhu.browser.event.CommonEvent;
 import com.learzhu.browser.litepal.bean.ExpressBean;
 import com.learzhu.browser.utils.ToastUtil;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -55,6 +60,7 @@ public class MainActivityFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        EventBus.getDefault().register(this);
         View view = inflater.inflate(R.layout.fragment_main, container, false);
         mListView = (ListView) view.findViewById(R.id.list_view);
         View headerView = inflater.inflate(R.layout.layout_listview_header, container, true);
@@ -72,7 +78,7 @@ public class MainActivityFragment extends Fragment {
         mTextView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                testSP();
+//                testSP();
                 ToastUtil.showShortToast(getContext(), "跳转到动画页");
 //                mView.setBackgroundResource(android.R.color.transparent);
 //                startActivity(new Intent((getActivity()), Main3Activity.class));
@@ -104,7 +110,7 @@ public class MainActivityFragment extends Fragment {
         mTextViewE.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AsyncTaskActivity.actionStart(getActivity());
+                startActivity(new Intent((getActivity()), AnimActivity.class));
             }
         });
         mListView.addHeaderView(headerView);
@@ -214,6 +220,21 @@ public class MainActivityFragment extends Fragment {
 //            super(context, resource);
 //        }
 //    }
+
+
+    @Override
+    public void onDestroyView() {
+        EventBus.getDefault().unregister(this);
+        super.onDestroyView();
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN) //在ui线程执行
+    public void handleEvent(CommonEvent event) {
+        int status = event.getStatus();
+        Log.i(TAG, "handleEvent: " + event.toString());
+        switch (status) {
+        }
+    }
 
     /**
      * 显示切换的动画
