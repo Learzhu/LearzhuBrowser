@@ -19,7 +19,6 @@ import com.learzhu.browser.R;
 import com.learzhu.browser.activity.AnimActivity;
 import com.learzhu.browser.activity.RecyclerViewActivity;
 import com.learzhu.browser.activity.VlayoutRecyclerViewActivity;
-import com.learzhu.browser.event.AnimEvent;
 import com.learzhu.browser.event.CommonEvent;
 import com.learzhu.browser.litepal.bean.ExpressBean;
 import com.learzhu.browser.utils.ToastUtil;
@@ -48,7 +47,7 @@ public class MainActivityFragment extends Fragment {
     ArrayAdapter adapter = null;
     ArrayList<String> list1 = new ArrayList<String>();
 
-    private TextView mTextView1, mTextView2, mTextViewD, mTextViewE;
+    private TextView mTextView1, mTextView2, mTextViewD, mTextViewE, mFTv;
 
     private View mView;
 
@@ -70,6 +69,7 @@ public class MainActivityFragment extends Fragment {
         mTextView2 = (TextView) headerView.findViewById(R.id.headerb_tv);
         mTextViewD = (TextView) headerView.findViewById(R.id.headerd_tv);
         mTextViewE = (TextView) headerView.findViewById(R.id.headere_tv);
+        mFTv = (TextView) headerView.findViewById(R.id.headerf_tv);
         String s1 = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
         String s2 = "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB";
 //        mTextView2.setText(s1 + ":" + s2);
@@ -113,9 +113,26 @@ public class MainActivityFragment extends Fragment {
                 startActivity(new Intent((getActivity()), AnimActivity.class));
             }
         });
+        mFTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showCustomerDialog();
+            }
+        });
         mListView.addHeaderView(headerView);
         initAdapter();
         return view;
+    }
+
+    private void showCustomerDialog() {
+//        MaterialDialog materialDialog = new MaterialDialog(getActivity());
+//        new MaterialDialog.Builder(this)// 初始化建造者
+//                .title(R.string.title)// 标题
+//                .content(R.string.content)// 内容
+//                .positiveText(R.string.agree)
+//                .negativeText(R.string.title)
+//                .show();// 显示对话框
+
     }
 
     /**

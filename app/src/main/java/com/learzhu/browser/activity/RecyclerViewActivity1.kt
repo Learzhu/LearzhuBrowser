@@ -1,7 +1,5 @@
 package com.learzhu.browser.activity
 
-import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.learzhu.browser.R
@@ -18,13 +16,13 @@ class RecyclerViewActivity1 : AppCompatActivity() {
 //        fun create(): RecyclerViewActivity = RecyclerViewActivity()
 //    }
     //companion object 的名字可以省略
-    companion object {
-        @JvmStatic
-        fun actionStart(context: Context) {
-            var intent = Intent()
-            intent.setClass(context, RecyclerViewActivity1::class.java)
-            context.startActivity(intent)
-        }
-    }
+//    companion object {
+//        @JvmStatic
+//        fun actionStart(context: Context) {
+//            var intent = Intent()
+//            intent.setClass(context, RecyclerViewActivity1::class.java)
+//            context.startActivity(intent)
+//        }
+//    }
 
 }
