@@ -33,7 +33,7 @@ public class SetCalculate {
             }
         }};
         System.out.println("集合1为: ");
-        printlnSet(set1);
+        printlnSet1(set1);
         System.out.println();
         Set<Integer> set2 = new HashSet<Integer>() {{
             System.out.println("请输入集合2的元素个数：");
@@ -48,7 +48,7 @@ public class SetCalculate {
             }
         }};
         System.out.println("集合2为: ");
-        printlnSet(set2);
+        printlnSet1(set2);
         System.out.println();
         while (true) {
             calculate(result, set1, set2);
@@ -109,10 +109,22 @@ public class SetCalculate {
      *
      * @param set
      */
-    public static void printlnSet(Set<Integer> set) {
+    public static void printlnSet1(Set<Integer> set) {
         Iterator<Integer> iterator = set.iterator();
         while (iterator.hasNext()) {
             System.out.print(iterator.next() + " ");
+        }
+    }
+
+    public static void printlnSet2(Set<Integer> set) {
+        for (Iterator iterator = set.iterator(); iterator.hasNext(); ) {
+            System.out.print(iterator.next() + " ");
+        }
+    }
+
+    public static void printlnSet3(Set<Integer> set) {
+        for (Integer i : set) {
+            System.out.println(i);
         }
     }
 }
