@@ -35,7 +35,7 @@ android {
 
         defaultConfig {
             applicationId "com.learzhu.browser"
-            targetSdkVersion 24
+            targetSdkVersion 26
             versionCode 1
             versionName "1.0"
             multiDexEnabled = true
@@ -88,7 +88,7 @@ dependencies {
         transitive = true
     }
 //    implementation 'com.afollestad.material-dialogs:core:2.0.3'
-
+//    implementation 'com.github.Learzhu:BaseFramework:Tag'
 }
 repositories {
     mavenCentral()
