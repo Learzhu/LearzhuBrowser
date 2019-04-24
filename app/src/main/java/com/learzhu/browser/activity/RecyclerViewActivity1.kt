@@ -1,7 +1,7 @@
 package com.learzhu.browser.activity
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.learzhu.browser.R
 
 class RecyclerViewActivity1 : AppCompatActivity() {

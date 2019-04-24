@@ -1,7 +1,6 @@
 package com.learzhu.browser.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -9,6 +8,8 @@ import android.widget.ProgressBar;
 import com.learzhu.browser.R;
 
 import java.util.UUID;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class Main3Activity extends AppCompatActivity {
     private static final String TAG = "Main3Activity";

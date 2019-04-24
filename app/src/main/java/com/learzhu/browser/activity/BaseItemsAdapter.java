@@ -12,6 +12,7 @@ import com.alibaba.android.vlayout.DelegateAdapter;
 import com.alibaba.android.vlayout.LayoutHelper;
 import com.learzhu.browser.R;
 
+
 /**
  * BaseItemsAdapter.java是阿里巴巴适配器的类。
  * 链接：https://www.jianshu.com/p/52c3c50103a8
