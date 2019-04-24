@@ -21,7 +21,7 @@ import android.widget.Button;
 import com.learzhu.browser.R;
 import com.learzhu.browser.broadreceiver.ScreenBroadcastReceiver;
 import com.learzhu.browser.fragment.BlankFragment;
-import com.learzhu.browser.fragment.ItemFragment;
+import com.learzhu.browser.glide.GlideActivity;
 import com.learzhu.browser.utils.StatusBarUtil;
 
 public class MainActivity extends AppCompatActivity implements BlankFragment.OnFragmentInteractionListener {
@@ -35,16 +35,17 @@ public class MainActivity extends AppCompatActivity implements BlankFragment.OnF
         super.onCreate(savedInstanceState);
         StatusBarUtil.setStatusTranslucent(this);
         setContentView(R.layout.activity_main);
-        mContext = getApplicationContext();
+//        mContext = getApplicationContext();
+        mContext = this;
         registerScreenBroadcastReceiver();
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         mFragmentTransaction1 = getSupportFragmentManager().beginTransaction();
 //        MainActivityFragment mainActivityFragment = new MainActivityFragment();
 
-        BlankFragment blankFragment = new BlankFragment();
-        mFragmentTransaction1.add(R.id.fragment, blankFragment);
-        mFragmentTransaction1.commit();
+//        BlankFragment blankFragment = new BlankFragment();
+//        mFragmentTransaction1.add(R.id.fragment, blankFragment);
+//        mFragmentTransaction1.commit();
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -52,14 +53,19 @@ public class MainActivity extends AppCompatActivity implements BlankFragment.OnF
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
-                StatusBarUtil.setStatusByColor(MainActivity.this, Color.BLACK);
-                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                ItemFragment fragment = ItemFragment.newInstance(5);
-//                fragmentTransaction.replace(R.id.fragment, fragment);
-//                mFragmentTransaction1.replace(R.id.fragment, fragment);
-                fragmentTransaction.commit();
+//                changeStatusBarFragment();
+                GlideActivity.actionStart(mContext);
             }
         });
+    }
+
+    private void changeStatusBarFragment() {
+        StatusBarUtil.setStatusByColor(MainActivity.this, Color.BLACK);
+        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+//        ItemFragment fragment = ItemFragment.newInstance(5);
+//                fragmentTransaction.replace(R.id.fragment, fragment);
+//                mFragmentTransaction1.replace(R.id.fragment, fragment);
+        fragmentTransaction.commit();
     }
 
     @Override
@@ -88,12 +94,12 @@ public class MainActivity extends AppCompatActivity implements BlankFragment.OnF
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         PowerManager pm = (PowerManager) this.getSystemService(Context.POWER_SERVICE);
-        if (!pm.isScreenOn()) {
-            PowerManager.WakeLock wl = pm.newWakeLock(PowerManager.ACQUIRE_CAUSES_WAKEUP |
-                    PowerManager.SCREEN_BRIGHT_WAKE_LOCK, "bright");
-            wl.acquire();
-            wl.release();
-        }
+//        if (!pm.isScreenOn()) {
+//            PowerManager.WakeLock wl = pm.newWakeLock(PowerManager.ACQUIRE_CAUSES_WAKEUP |
+//                    PowerManager.SCREEN_BRIGHT_WAKE_LOCK, "bright");
+//            wl.acquire();
+//            wl.release();
+//        }
     }
 
     /**

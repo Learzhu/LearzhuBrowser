@@ -3,9 +3,8 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 25
-//    buildToolsVersion "25.0.2"
-    buildToolsVersion "28.0.3"
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
 
     flavorDimensions "default"
 
@@ -15,14 +14,20 @@ android {
             // dev utilizes minSDKVersion = 21 to allow the Android gradle plugin
             // to pre-dex each module and produce an APK that can be tested on
             // Android Lollipop without time consuming dex merging processes.
-            minSdkVersion 15
+            minSdkVersion rootProject.ext.android.minSdkVersion
 //            targetSdkVersion 24
-            targetSdkVersion 25
+            targetSdkVersion rootProject.ext.android.targetSdkVersion
         }
         prod {
             // The actual minSdkVersion for the application.
-            minSdkVersion 15
+            minSdkVersion rootProject.ext.android.minSdkVersion
         }
+    }
+
+    //    避免butterknife异常加入
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
     //在API 23中，Google已经移除了移除了Apache HttpClient相关的类 。谷歌推荐使用HttpUrlConnection，如果要继续使用需要Apache HttpClient
@@ -35,7 +40,7 @@ android {
 
         defaultConfig {
             applicationId "com.learzhu.browser"
-            targetSdkVersion 26
+            minSdkVersion rootProject.ext.android.minSdkVersion
             versionCode 1
             versionName "1.0"
             multiDexEnabled = true
@@ -63,11 +68,13 @@ dependencies {
     //    compile 'com.android.support:support-v4:24.2.0'
     //    compile 'com.android.support:recyclerview-v7:24.2.0'
     //    compile project(':myapplication')
-    implementation 'com.android.support:appcompat-v7:25.2.0'
     implementation 'com.android.support:multidex:1.0.1'
-    implementation 'com.android.support:design:25.2.0'
-    implementation 'com.android.support:support-v4:25.2.0'
-    implementation 'com.android.support:recyclerview-v7:25.2.0'
+
+    implementation "com.android.support:appcompat-v7:$rootProject.ext.android.support_library_version"
+    implementation "com.android.support:design:$rootProject.ext.android.support_library_version"
+    implementation "com.android.support:support-v4:$rootProject.ext.android.support_library_version"
+    implementation "com.android.support:recyclerview-v7:$rootProject.ext.android.support_library_version"
+
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     //    implementation 'org.apache.commons.commons-lang3:3.6'
     implementation 'org.apache.commons:commons-lang3:3.6'
@@ -89,6 +96,15 @@ dependencies {
     }
 //    implementation 'com.afollestad.material-dialogs:core:2.0.3'
 //    implementation 'com.github.Learzhu:BaseFramework:Tag'
+    //glide
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+    implementation 'jp.wasabeef:glide-transformations:4.0.1'
+
+    //butterknife 最新的版本支持androidx 会导致意外的异常
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
 }
 repositories {
     mavenCentral()
