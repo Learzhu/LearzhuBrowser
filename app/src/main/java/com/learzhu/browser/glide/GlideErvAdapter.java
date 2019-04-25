@@ -1,10 +1,10 @@
 package com.learzhu.browser.glide;
 
+import android.content.Context;
 import android.support.annotation.Nullable;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.learzhu.browser.R;
@@ -27,19 +27,32 @@ import static com.bumptech.glide.request.RequestOptions.bitmapTransform;
  * @used {@link }
  */
 public class GlideErvAdapter extends BaseQuickAdapter<String, BaseViewHolder> {
+    private Context mContext;
 
-    public GlideErvAdapter(int layoutResId, @Nullable List<String> data) {
+    public GlideErvAdapter(int layoutResId, @Nullable List<String> data, Context context) {
         super(layoutResId, data);
+        this.mContext = context;
     }
 
     @Override
     protected void convert(BaseViewHolder helper, String item) {
 //        Glide.with(mContext).load(item).transform(new RoundedCorners(40)).into((ImageView) helper.getView(R.id.img_content));
-//        Glide.with(mContext).load(item)
-//                .apply(bitmapTransform(new RoundedCornersTransformation(45, 0, RoundedCornersTransformation.CornerType.ALL)))
-//                .into((ImageView) helper.getView(R.id.img_content));
-        Glide.with(mContext).load(item).diskCacheStrategy(DiskCacheStrategy.ALL).dontAnimate().placeholder(R.drawable.img_loading).error(R.drawable.img_loading)
-                .apply(bitmapTransform(new RoundedCornersTransformation(40, 0, RoundedCornersTransformation.CornerType.ALL)))
+        Glide.with(mContext).load(item)
+                .apply(bitmapTransform(new RoundedCornersTransformation(45, 0, RoundedCornersTransformation.CornerType.ALL)))
                 .into((ImageView) helper.getView(R.id.img_content));
+
+//        Glide.with(mContext).load(item).diskCacheStrategy(DiskCacheStrategy.ALL).dontAnimate().placeholder(R.drawable.img_loading).error(R.drawable.img_loading)
+//                .apply(bitmapTransform(new RoundedCornersTransformation(40, 0, RoundedCornersTransformation.CornerType.ALL)))
+//                .into((ImageView) helper.getView(R.id.img_content));
+
+//        GlideCircleTransform glideCircleTransform = new GlideCircleTransform(mContext, -1, 30);
+//
+//        RequestOptions options = new RequestOptions().transform(new GlideCircleTransform(mContext, mContext.getResources().getColor(R.color.colorAccent), 20));
+//        Glide.with(mContext).load(item).apply(options).into((ImageView) helper.getView(R.id.img_content));
+
+//        glideCircleTransform.setExceptCorner(true, true, true, true);
+//        Glide.with(mContext).load(item).diskCacheStrategy(DiskCacheStrategy.ALL).dontAnimate().placeholder(R.drawable.img_loading).error(R.drawable.img_loading)
+//                .transform(glideCircleTransform)
+//                .into((ImageView) helper.getView(R.id.img_content));
     }
 }

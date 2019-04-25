@@ -204,7 +204,6 @@ public class GlideCircleTransform implements Transformation<Bitmap> {
         return this.getClass().getName();
     }
 
-
     @Override
     public void updateDiskCacheKey(@NonNull MessageDigest messageDigest) {
     }

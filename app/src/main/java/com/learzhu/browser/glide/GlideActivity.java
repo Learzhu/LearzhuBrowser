@@ -54,7 +54,7 @@ public class GlideActivity extends AppCompatActivity {
         for (int i = 0; i < 6; i++) {
             list.add(imgUrl);
         }
-        GlideErvAdapter glideErvAdapter = new GlideErvAdapter(R.layout.item_glide, list);
+        GlideErvAdapter glideErvAdapter = new GlideErvAdapter(R.layout.item_glide, list, this);
         mExpandRecyclerView.setLayoutManager(new GridLayoutManager(this, 2) {
             @Override
             public boolean canScrollVertically() {
