@@ -21,7 +21,7 @@ import android.widget.Button;
 import com.learzhu.browser.R;
 import com.learzhu.browser.broadreceiver.ScreenBroadcastReceiver;
 import com.learzhu.browser.fragment.BlankFragment;
-import com.learzhu.browser.glide.GlideActivity;
+import com.learzhu.browser.notification.NotificationActivity;
 import com.learzhu.browser.utils.StatusBarUtil;
 
 public class MainActivity extends AppCompatActivity implements BlankFragment.OnFragmentInteractionListener {
@@ -54,7 +54,8 @@ public class MainActivity extends AppCompatActivity implements BlankFragment.OnF
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
 //                changeStatusBarFragment();
-                GlideActivity.actionStart(mContext);
+//                GlideActivity.actionStart(mContext);
+                NotificationActivity.actionStart(MainActivity.this);
             }
         });
     }
