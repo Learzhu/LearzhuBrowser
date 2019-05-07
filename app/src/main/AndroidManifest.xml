@@ -77,6 +77,7 @@
         <activity android:name=".activity.VlayoutRecyclerViewActivity"/>
         <activity android:name=".activity.AsyncTaskActivity"/>
         <activity android:name=".glide.GlideActivity"/>
+        <activity android:name=".glide.RecyclerViewHorizontalActivity"/>
     </application>
 
 </manifest>

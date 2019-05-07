@@ -21,7 +21,7 @@ import android.widget.Button;
 import com.learzhu.browser.R;
 import com.learzhu.browser.broadreceiver.ScreenBroadcastReceiver;
 import com.learzhu.browser.fragment.BlankFragment;
-import com.learzhu.browser.notification.NotificationActivity;
+import com.learzhu.browser.glide.RecyclerViewHorizontalActivity;
 import com.learzhu.browser.utils.StatusBarUtil;
 
 public class MainActivity extends AppCompatActivity implements BlankFragment.OnFragmentInteractionListener {
@@ -55,7 +55,8 @@ public class MainActivity extends AppCompatActivity implements BlankFragment.OnF
                         .setAction("Action", null).show();
 //                changeStatusBarFragment();
 //                GlideActivity.actionStart(mContext);
-                NotificationActivity.actionStart(MainActivity.this);
+//                NotificationActivity.actionStart(MainActivity.this);
+                RecyclerViewHorizontalActivity.actionStart(mContext);
             }
         });
     }

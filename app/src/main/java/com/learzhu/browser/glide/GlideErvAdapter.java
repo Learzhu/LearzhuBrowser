@@ -2,7 +2,9 @@ package com.learzhu.browser.glide;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -41,7 +43,10 @@ public class GlideErvAdapter extends BaseQuickAdapter<String, BaseViewHolder> {
                 .apply(bitmapTransform(new RoundedCornersTransformation(45, 0, RoundedCornersTransformation.CornerType.ALL)))
                 .into((ImageView) helper.getView(R.id.img_content));
 
-//        Glide.with(mContext).load(item).diskCacheStrategy(DiskCacheStrategy.ALL).dontAnimate().placeholder(R.drawable.img_loading).error(R.drawable.img_loading)
+        TextView positionTv = helper.getView(R.id.tv_position);
+        positionTv.setText(helper.getPosition() + "");
+        Log.e(TAG, "convert: " + helper.getPosition());
+        //        Glide.with(mContext).load(item).diskCacheStrategy(DiskCacheStrategy.ALL).dontAnimate().placeholder(R.drawable.img_loading).error(R.drawable.img_loading)
 //                .apply(bitmapTransform(new RoundedCornersTransformation(40, 0, RoundedCornersTransformation.CornerType.ALL)))
 //                .into((ImageView) helper.getView(R.id.img_content));
 

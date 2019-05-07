@@ -41,7 +41,8 @@ public class GlideActivity extends AppCompatActivity {
         setContentView(R.layout.activity_glide);
         ButterKnife.bind(this);
         loadImg();
-        loadExpandRv();
+//        loadExpandRv();
+        loadExpandRvRTL();
     }
 
     private void loadImg() {
@@ -59,6 +60,42 @@ public class GlideActivity extends AppCompatActivity {
             @Override
             public boolean canScrollVertically() {
                 return false;
+            }
+        });
+//        mExpandRecyclerView.setLayoutManager(new LinearLayoutManager(this) {
+//            @Override
+//            public boolean canScrollVertically() {
+//                return false;
+//            }
+//        });
+        mExpandRecyclerView.setAdapter(glideErvAdapter);
+    }
+
+    /**
+     * 从右侧开始布局的列表
+     */
+    private void loadExpandRvRTL() {
+        List<String> list = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            list.add(imgUrl);
+        }
+        GlideErvAdapter glideErvAdapter = new GlideErvAdapter(R.layout.item_glide, list, this);
+        // HORIZONTAL或VERTICAL，实现横向GridView、纵向GridView效果
+        //方向垂直 水平3列
+        mExpandRecyclerView.setLayoutManager(new GridLayoutManager(this, 3, GridLayoutManager.VERTICAL, false) {
+            @Override
+            public boolean canScrollVertically() {
+                return false;
+            }
+
+            @Override
+            public boolean canScrollHorizontally() {
+                return false;
+            }
+
+            @Override
+            protected boolean isLayoutRTL() {
+                return true;
             }
         });
 //        mExpandRecyclerView.setLayoutManager(new LinearLayoutManager(this) {
