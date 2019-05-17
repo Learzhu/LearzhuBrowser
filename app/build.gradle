@@ -3,10 +3,40 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['src/main/jniLibs']
+        }
+    }
     compileSdkVersion rootProject.ext.android.compileSdkVersion
     buildToolsVersion rootProject.ext.android.buildToolsVersion
 
     flavorDimensions "default"
+
+    defaultConfig {
+        applicationId "com.learzhu.browser"
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+
+        //加入第三方后工程方法数超过65535
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        manifestPlaceholders = [
+//                MTA_APPKEY      : "3102525237",
+//                MTA_CHANNEL     : "yingyongbao",
+GETUI_APP_ID    : "MHLZr5VMtFAeft6vI4FoT5",
+GETUI_APP_KEY   : "BznCY8Sfyc7IZRRFKWLJV8",
+GETUI_APP_SECRET: "sH2duSusoTAbKZKpbNXf39"
+        ]
+        ndk {
+            // 设置支持的SO库架构
+            abiFilters 'armeabi-v7a'
+        }
+//        signingConfig signingConfigs.debug
+        flavorDimensions "baidu"
+    }
 
     productFlavors {
         // Define separate dev and prod product flavors.
@@ -34,16 +64,21 @@ android {
     useLibrary 'org.apache.http.legacy'
     buildTypes {
         release {
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//            shrinkResources false //开启精简
         }
 
         defaultConfig {
+            buildConfigField "boolean", "LOG_DEBUG", "true"
             applicationId "com.learzhu.browser"
             minSdkVersion rootProject.ext.android.minSdkVersion
             versionCode 1
             versionName "1.0"
             multiDexEnabled = true
+//            shrinkResources false //开启精简
         }
     }
 
@@ -89,7 +124,8 @@ dependencies {
     //数据库相关的
     implementation 'org.litepal.android:core:1.6.1'
     // https://mvnrepository.com/artifact/net.sourceforge.jexcelapi/jxl
-    implementation group: 'net.sourceforge.jexcelapi', name: 'jxl', version: '2.6.12'
+//    implementation group: 'net.sourceforge.jexcelapi', name: 'jxl', versionshrinking: '2.6.12'
+
     implementation 'com.zhy:base-rvadapter:3.0.3'
     implementation('com.alibaba.android:vlayout:1.2.8@aar') {
         transitive = true
@@ -105,6 +141,8 @@ dependencies {
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+    implementation 'com.getui:sdk:2.13.2.0'
+
 }
 repositories {
     mavenCentral()

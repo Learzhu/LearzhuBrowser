@@ -1,12 +1,11 @@
 package com.learzhu.browser.fragment;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,20 +19,13 @@ import com.learzhu.browser.activity.AnimActivity;
 import com.learzhu.browser.activity.RecyclerViewActivity;
 import com.learzhu.browser.activity.VlayoutRecyclerViewActivity;
 import com.learzhu.browser.event.CommonEvent;
-import com.learzhu.browser.litepal.bean.ExpressBean;
 import com.learzhu.browser.utils.ToastUtil;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
-
-import jxl.Sheet;
-import jxl.Workbook;
-import jxl.read.biff.BiffException;
 
 /**
  * A placeholder fragment containing a simple view.
@@ -139,7 +131,7 @@ public class MainActivityFragment extends Fragment {
      * 将Excel的内容保存到SQLite
      */
     private void translateExcel2SQLite() {
-        importSheet();
+//        importSheet();
     }
 
     /**
@@ -151,22 +143,22 @@ public class MainActivityFragment extends Fragment {
      * 4. sheet.getRows()可以获取行数，sheet.getColumns()获取列数
      * 5. sheet.getCell(0, j).getContents()可以获得第j行第一列的内容，同理sheet.getCell(1, j).getContents()可以获取第j行第二列的内容
      */
-    private void importSheet() {
-        try {
-            // 1
-//            InputStream is = getResources().getAssets().open("vipdb.xls");
-//            InputStream is = getResources().getAssets().open("express100.xlsx");
-            InputStream is = getResources().getAssets().open("express100.xls");
-            // 2
-            Workbook book = Workbook.getWorkbook(is);
-            // 3 获取第一页的表对象
-            Sheet sheet = book.getSheet(0);
-            insertExpressBeans(sheet);
-            book.close();
-        } catch (IOException | BiffException e) {
-            e.printStackTrace();
-        }
-    }
+//    private void importSheet() {
+//        try {
+//            // 1
+////            InputStream is = getResources().getAssets().open("vipdb.xls");
+////            InputStream is = getResources().getAssets().open("express100.xlsx");
+//            InputStream is = getResources().getAssets().open("express100.xls");
+//            // 2
+//            Workbook book = Workbook.getWorkbook(is);
+//            // 3 获取第一页的表对象
+//            Sheet sheet = book.getSheet(0);
+//            insertExpressBeans(sheet);
+//            book.close();
+//        } catch (IOException | BiffException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
     /**
      * 保存内容到数据库
@@ -176,28 +168,28 @@ public class MainActivityFragment extends Fragment {
      *
      * @param sheet 第一页的表对象
      */
-    private void insertExpressBeans(Sheet sheet) {
-        // 4 遍历标本的每一行
-        int rows = sheet.getRows();
-//        ToastUtil.showLongToast(getContext(), "一共" + rows + "行");
-        ToastUtil.showLongToast(getActivity(), "一共" + rows + "行");
-        Log.e(TAG, "insertExpressBeans: " + rows);
-        for (int i = 1; i < rows; i++) {
-            ExpressBean expressBean = new ExpressBean();
-            expressBean.setComName(sheet.getCell(0, i).getContents());
-            expressBean.setComCode(sheet.getCell(1, i).getContents());
-//            expressBean.setIntroductions(sheet.getCell(2, i).getContents());
-//            expressBean.setType(sheet.getCell(3, i).getContents());
-//            expressBean.setCountryCode(sheet.getCell(4, i).getContents());
-            expressBean.save();
-        }
-//        for (int j = 1; j < sheet.getRows(); ++j) {
-//            // 5  initDataInfo(sheet.getCell(0, j).getContents(), sheet.getCell(1, j).getContents());
-//            for (int i = 0; i < sheet.getColumns(); i++) {
-//
-//            }
+//    private void insertExpressBeans(Sheet sheet) {
+//        // 4 遍历标本的每一行
+//        int rows = sheet.getRows();
+////        ToastUtil.showLongToast(getContext(), "一共" + rows + "行");
+//        ToastUtil.showLongToast(getActivity(), "一共" + rows + "行");
+//        Log.e(TAG, "insertExpressBeans: " + rows);
+//        for (int i = 1; i < rows; i++) {
+//            ExpressBean expressBean = new ExpressBean();
+//            expressBean.setComName(sheet.getCell(0, i).getContents());
+//            expressBean.setComCode(sheet.getCell(1, i).getContents());
+////            expressBean.setIntroductions(sheet.getCell(2, i).getContents());
+////            expressBean.setType(sheet.getCell(3, i).getContents());
+////            expressBean.setCountryCode(sheet.getCell(4, i).getContents());
+//            expressBean.save();
 //        }
-    }
+////        for (int j = 1; j < sheet.getRows(); ++j) {
+////            // 5  initDataInfo(sheet.getCell(0, j).getContents(), sheet.getCell(1, j).getContents());
+////            for (int i = 0; i < sheet.getColumns(); i++) {
+////
+////            }
+////        }
+//    }
 
 //    //这个方法是写在SQLiteOpenHelper子类里的，为了方便查看这里拿出来了
 //    public void initDataInfo(String code, String value) {
@@ -256,13 +248,13 @@ public class MainActivityFragment extends Fragment {
     /**
      * 显示切换的动画
      */
-    private void changeAnimator() {
-        AnimatorSet showServerSet = new AnimatorSet();
-        ObjectAnimator alphaAnimHiddeBackIv = ObjectAnimator.ofFloat(mTextView1, "alpha", 0, 1);
-        ObjectAnimator alphaAnimHiddeNextIv = ObjectAnimator.ofFloat(mTextView2, "alpha", 1, 0);
-        showServerSet.playTogether(alphaAnimHiddeBackIv, alphaAnimHiddeNextIv);
-        showServerSet.setDuration(200);
-        showServerSet.start();
-    }
+//    private void changeAnimator() {
+//        AnimatorSet showServerSet = new AnimatorSet();
+//        ObjectAnimator alphaAnimHiddeBackIv = ObjectAnimator.ofFloat(mTextView1, "alpha", 0, 1);
+//        ObjectAnimator alphaAnimHiddeNextIv = ObjectAnimator.ofFloat(mTextView2, "alpha", 1, 0);
+//        showServerSet.playTogether(alphaAnimHiddeBackIv, alphaAnimHiddeNextIv);
+//        showServerSet.setDuration(200);
+//        showServerSet.start();
+//    }
 
 }
