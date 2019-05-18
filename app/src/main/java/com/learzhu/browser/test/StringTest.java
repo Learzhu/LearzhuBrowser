@@ -22,7 +22,6 @@ public class StringTest {
             "   \"result\" : false,\n" +
             "   \"returnCode\" : \"500\"\n" +
             "}";
-    static String str4 = "aaasssbbbb";
 
     static String filePath = "/storage/emulated/0/Tencent/QQfile_recv/客服头像@3X.png";
     /**
@@ -164,8 +163,8 @@ public class StringTest {
      * @return
      */
     public static boolean isAvailableImgSuffix(String absolutePath) {
-        return absolutePath.contains("jpg") || absolutePath.contains("jpeg") || absolutePath.contains("gif") || absolutePath.contains("png") || absolutePath.contains("bmp");
         System.out.println("str4 length "+str4.length() );
         System.out.println("str5 length "+str5.length() );
+        return absolutePath.contains("jpg") || absolutePath.contains("jpeg") || absolutePath.contains("gif") || absolutePath.contains("png") || absolutePath.contains("bmp");
     }
 }
