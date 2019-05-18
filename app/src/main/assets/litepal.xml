@@ -1,28 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <litepal>
+    <!--
+    	Define the database name of your application.
+    	By default each database name should be end with .db.
+    	If you didn't name your database end with .db,
+    	LitePal would plus the suffix automatically for you.
+    	For example:
+    	<dbname value="demo" />
+    -->
     <!-- 数据库名 -->
-    <dbname value="JYBrowser"/>
+    <dbname value="express100"/>
+    <!--
+    	Define the database name of your application.
+    	By default each database name should be end with .db.
+    	If you didn't name your database end with .db,
+    	LitePal would plus the suffix automatically for you.
+    	For example:
+    	<dbname value="demo" />
+    -->
     <!-- 数据库版本号 -->
     <version value="40"/>
+
+    <!--
+     Define your models in the list with mapping tag, LitePal will
+     create tables for each mapping class. The supported fields
+     defined in models will be mapped into columns.
+     For example:
+     <list>
+         <mapping class="com.test.model.Reader" />
+         <mapping class="com.test.model.Magazine" />
+     </list>
+ -->
     <!-- 数据库表 -->
     <list>
-        <mapping class="cn.zhangyoukeji.browser.jisou.model.table.BookmarkTable"/>
-        <mapping class="cn.zhangyoukeji.browser.jisou.model.table.CollectionTable"/>
-        <mapping class="cn.zhangyoukeji.browser.jisou.model.table.HistoryTable"/>
-        <mapping class="cn.zhangyoukeji.browser.jisou.model.table.InputHistoryTable"/>
-        <mapping class="cn.zhangyoukeji.browser.jisou.model.table.DownloadTable"/>
-        <mapping class="cn.zhangyoukeji.browser.jisou.model.table.NewsClickedTable"/>
-        <mapping class="cn.zhangyoukeji.browser.jisou.model.table.HotNewsTable"/>
-        <mapping class="cn.zhangyoukeji.browser.jisou.model.table.ComedyPositiveTable"/>
-        <mapping class="cn.zhangyoukeji.browser.jisou.model.table.ComedyNegativeTable"/>
-        <mapping class="cn.zhangyoukeji.browser.jisou.model.table.CommentPraiseTable"/>
-        <mapping class="cn.zhangyoukeji.browser.jisou.model.table.CoolWebsiteTable"/>
-        <mapping class="cn.zhangyoukeji.browser.jisou.model.table.AdvertiseAppTable"/>
-        <mapping class="cn.zhangyoukeji.browser.jisou.model.table.CategoryTable"/>
-        <mapping class="cn.zhangyoukeji.browser.jisou.model.table.AnchorTable"/>
-        <mapping class="cn.zhangyoukeji.browser.jisou.model.table.PushMessageInfoListBeanTable"/>
-        <mapping class="cn.zhangyoukeji.browser.jisou.model.bean.PushMessageInfoListBean"/>
-        <mapping class="cn.zhangyoukeji.browser.jisou.model.bean.NewsListBean"/>
+        <!--<mapping class="cn.zhangyoukeji.browser.jisou.model.table.BookmarkTable"/>-->
+        <!--<mapping class="cn.zhangyoukeji.browser.jisou.model.table.CollectionTable"/>-->
+        <!--<mapping class="cn.zhangyoukeji.browser.jisou.model.table.HistoryTable"/>-->
+        <!--<mapping class="cn.zhangyoukeji.browser.jisou.model.table.InputHistoryTable"/>-->
+        <!--<mapping class="cn.zhangyoukeji.browser.jisou.model.table.DownloadTable"/>-->
+        <!--<mapping class="cn.zhangyoukeji.browser.jisou.model.table.NewsClickedTable"/>-->
+        <!--<mapping class="cn.zhangyoukeji.browser.jisou.model.table.HotNewsTable"/>-->
+        <!--<mapping class="cn.zhangyoukeji.browser.jisou.model.table.ComedyPositiveTable"/>-->
+        <!--<mapping class="cn.zhangyoukeji.browser.jisou.model.table.ComedyNegativeTable"/>-->
+        <!--<mapping class="cn.zhangyoukeji.browser.jisou.model.table.CommentPraiseTable"/>-->
+        <!--<mapping class="cn.zhangyoukeji.browser.jisou.model.table.CoolWebsiteTable"/>-->
+        <!--<mapping class="cn.zhangyoukeji.browser.jisou.model.table.AdvertiseAppTable"/>-->
+        <!--<mapping class="cn.zhangyoukeji.browser.jisou.model.table.CategoryTable"/>-->
+        <!--<mapping class="cn.zhangyoukeji.browser.jisou.model.table.AnchorTable"/>-->
+        <!--<mapping class="cn.zhangyoukeji.browser.jisou.model.table.PushMessageInfoListBeanTable"/>-->
+        <!--<mapping class="cn.zhangyoukeji.browser.jisou.model.bean.PushMessageInfoListBean"/>-->
+        <!--<mapping class="cn.zhangyoukeji.browser.jisou.model.bean.NewsListBean"/>-->
+        <mapping class="com.learzhu.browser.litepal.bean.ExpressBean"/>
     </list>
+
+    <!--
+        Define where the .db file should be. "internal" means the .db file
+        will be stored in the database folder of internal storage which no
+        one can access. "external" means the .db file will be stored in the
+        path to the directory on the primary external storage device where
+        the application can place persistent files it owns which everyone
+        can access. "internal" will act as default.
+        For example:
+        <storage value="external" />
+    -->
 
 </litepal>

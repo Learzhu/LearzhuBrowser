@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
-              android:layout_height="150dp"
+              android:layout_height="wrap_content"
               android:orientation="vertical">
 
     <TextView
@@ -14,9 +15,9 @@
 
     <TextView
         android:id="@+id/headerb_tv"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:text="BBBBBBBBBBBBBBBBBBBBBBBBBBBB"
+        android:text="将Excel 写入到SQLite"
         android:visibility="visible"/>
 
     <View
@@ -24,5 +25,26 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="CCCCCCCCCCCCCCCCCCCCCC"
+        android:visibility="visible"/>
+
+    <TextView
+        android:id="@+id/headerd_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="跳转到RecyclerView的界面"
+        android:visibility="visible"/>
+
+    <TextView
+        android:id="@+id/headere_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="跳转到AsyncTask的界面"
+        android:visibility="visible"/>
+
+    <TextView
+        android:id="@+id/headerf_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="测试Dialog"
         android:visibility="visible"/>
 </LinearLayout>

@@ -16,6 +16,12 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.learzhu.browser.R;
+import com.learzhu.browser.event.AnimEvent;
+import com.learzhu.browser.event.CommonEvent;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -75,7 +81,10 @@ public class AnimActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        EventBus.getDefault().register(this);
         super.onCreate(savedInstanceState);
+        EventBus.getDefault().post(new CommonEvent("anim", 1));
+//        EventBus.getDefault().post(new Object());
         setContentView(R.layout.activity_anim);
         mPullDownTv = (TextView) findViewById(R.id.tv_refresh_pull);
         mBobbleRl = (RelativeLayout) findViewById(R.id.rl_refresh);
@@ -236,5 +245,19 @@ public class AnimActivity extends AppCompatActivity {
         animator.setDuration(1000);
         animator.start();
         return animator;
+    }
+
+    @Override
+    protected void onDestroy() {
+        EventBus.getDefault().unregister(this);
+        super.onDestroy();
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN) //在ui线程执行
+    public void handleEvent(AnimEvent event) {
+        int status = event.getStatus();
+        Log.i(TAG, "handleEvent: " + event.toString());
+        switch (status) {
+        }
     }
 }
