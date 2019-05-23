@@ -1,5 +1,7 @@
 package com.learzhu.browser.test;
 
+import com.learzhu.browser.utils.DoubleUtil;
+
 import java.text.NumberFormat;
 
 /**
@@ -18,11 +20,20 @@ public class TestNumber {
     static double l;
 
     public static void main(String args[]) {
+        testDouleNum();
         testNumEqual();
         //        testNum();
         System.out.println((int) 1.2);
         System.out.println(Math.ceil(Math.abs(-1.2)));
         System.out.println(Math.floor(1.2));
+    }
+
+    private static void testDouleNum() {
+        System.out.println(DoubleUtil.formatPriceWithSumbol(-1.2));
+        double double1 = DoubleUtil.parseDouble(DoubleUtil.formatPrice(0.1));
+        System.out.println("double1: " + double1);
+        double double2 = DoubleUtil.parseDouble(DoubleUtil.formatPrice(0));
+        System.out.println("double2: " + double2);
     }
 
     private static void testNumEqual() {
