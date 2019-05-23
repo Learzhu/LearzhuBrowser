@@ -22,7 +22,6 @@ public class StringTest {
             "   \"result\" : false,\n" +
             "   \"returnCode\" : \"500\"\n" +
             "}";
-    static String str4 = "aaasssbbbb";
 
     static String filePath = "/storage/emulated/0/Tencent/QQfile_recv/客服头像@3X.png";
     /**
@@ -34,6 +33,9 @@ public class StringTest {
     private boolean result;
     private String returnCode;
     private String message;
+    static String str4 = "F:\\BaiduNetdiskDownload\\android-7.1.0_r1.7z: 无法打开 E:\\Android\\AOSP\\android-7.1.0_r1\\android-7.1.0_r1\\prebuilts\\eclipse\\mavenplugins\\tycho\\tycho-dependencies-m2repo\\org\\eclipse\\tycho\\tycho-bundles-external\\0.20.0\\eclipse\\plugins\\org.eclipse.core.runtime.compatibility.registry_3.5.200.v20130514-1256\\.api_description\n" +
+            "!   系统找不到指定的路径。\n";
+    static String str5 = "E:\\Android\\AOSP\\android-7.1.0_r1\\android-7.1.0_r1\\prebuilts\\eclipse\\mavenplugins\\tycho\\tycho-dependencies-m2repo\\org\\eclipse\\tycho\\tycho-bundles-external\\0.20.0\\eclipse\\plugins\\org.eclipse.core.runtime.compatibility.registry_3.5.200.v20130514-1256\\.api_description\n";
 
     public static void main(String args[]) {
         //替换空格之后
@@ -161,6 +163,8 @@ public class StringTest {
      * @return
      */
     public static boolean isAvailableImgSuffix(String absolutePath) {
+        System.out.println("str4 length "+str4.length() );
+        System.out.println("str5 length "+str5.length() );
         return absolutePath.contains("jpg") || absolutePath.contains("jpeg") || absolutePath.contains("gif") || absolutePath.contains("png") || absolutePath.contains("bmp");
     }
 }
