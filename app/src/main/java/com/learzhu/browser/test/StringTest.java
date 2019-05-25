@@ -38,6 +38,7 @@ public class StringTest {
     static String str5 = "E:\\Android\\AOSP\\android-7.1.0_r1\\android-7.1.0_r1\\prebuilts\\eclipse\\mavenplugins\\tycho\\tycho-dependencies-m2repo\\org\\eclipse\\tycho\\tycho-bundles-external\\0.20.0\\eclipse\\plugins\\org.eclipse.core.runtime.compatibility.registry_3.5.200.v20130514-1256\\.api_description\n";
 
     public static void main(String args[]) {
+        testSplit1();
         //替换空格之后
         System.out.println("++++++" + StringUtils.formatContent(str));
         System.out.println(str1.concat("A"));
@@ -57,6 +58,12 @@ public class StringTest {
         testRemoveComma();
         testFilePathPostfix();
         System.out.println("surfux: " + isAvailableImgSuffix("jpg.a"));
+    }
+
+    private static void testSplit1() {
+        System.out.println("testSplit1:");
+        String string = "!!!!\n888";
+
     }
 
     private static void testFilePathPostfix() {
@@ -163,8 +170,8 @@ public class StringTest {
      * @return
      */
     public static boolean isAvailableImgSuffix(String absolutePath) {
-        System.out.println("str4 length "+str4.length() );
-        System.out.println("str5 length "+str5.length() );
+        System.out.println("str4 length " + str4.length());
+        System.out.println("str5 length " + str5.length());
         return absolutePath.contains("jpg") || absolutePath.contains("jpeg") || absolutePath.contains("gif") || absolutePath.contains("png") || absolutePath.contains("bmp");
     }
 }

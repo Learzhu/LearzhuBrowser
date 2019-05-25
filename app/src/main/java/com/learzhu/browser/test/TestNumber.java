@@ -29,6 +29,7 @@ public class TestNumber {
     }
 
     private static void testDouleNum() {
+        System.out.println(DoubleUtil.formatPriceAbs(-1.2));
         System.out.println(DoubleUtil.formatPriceWithSumbol(-1.2));
         double double1 = DoubleUtil.parseDouble(DoubleUtil.formatPrice(0.1));
         System.out.println("double1: " + double1);

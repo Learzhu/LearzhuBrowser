@@ -24,6 +24,7 @@ import java.util.ArrayList;
  * Created by lfh on 2016/9/10.
  */
 public class StringUtils {
+    public static String SEPARATOR = "ÿ";
 
     public static String creatAcacheKey(Object... param) {
         String key = "";
