@@ -44,9 +44,9 @@ public class RecyclerViewActivity extends AppCompatActivity {
 
     private void initRecyclerView() {
         mItemBeans = new ArrayList<>();
-        for (int i = 0; i < 30; i++) {
-            mItemBeans.add(new ItemBean(i + "", true));
-        }
+//        for (int i = 0; i < 30; i++) {
+//            mItemBeans.add(new ItemBean(i + "", true));
+//        }
         mAdapter = new CommonAdapter<ItemBean>(this, R.layout.item_recyclerview, mItemBeans) {
             @Override
             protected void convert(ViewHolder holder, ItemBean itemBean, int position) {
