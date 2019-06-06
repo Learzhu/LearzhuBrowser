@@ -7,7 +7,6 @@
     <string name="special_text"><b>Hello</b>blank <u>fragment</u></string>
 
 
-
     <!--个推需要的字符资源-->
     <string name="bind_alias">绑定别名</string>
     <string name="bind_alias_unknown_exception">绑定别名失败，未知异常</string>

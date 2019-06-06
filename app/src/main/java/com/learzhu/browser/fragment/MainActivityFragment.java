@@ -20,6 +20,7 @@ import com.learzhu.browser.activity.RecyclerViewActivity;
 import com.learzhu.browser.activity.VlayoutRecyclerViewActivity;
 import com.learzhu.browser.event.CommonEvent;
 import com.learzhu.browser.utils.ToastUtil;
+import com.learzhu.browser.verticaltablayout.VerticalTabLayoutActivity;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -111,6 +112,12 @@ public class MainActivityFragment extends Fragment {
                 showCustomerDialog();
             }
         });
+        headerView.findViewById(R.id.headerg_tv).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                VerticalTabLayoutActivity.actionStart(getActivity());
+            }
+        });
         mListView.addHeaderView(headerView);
         initAdapter();
         return view;
@@ -199,7 +206,6 @@ public class MainActivityFragment extends Fragment {
 //        cv.put("value", value);
 //        db.insert(DATA_TABLE, null, cv);
 //    }
-
     private void testSP() {
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences("AA", Context.MODE_PRIVATE);
         sharedPreferences.edit().putString("BB", "XXX").commit();
