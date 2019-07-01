@@ -22,8 +22,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".verticaltablayout.VerticalTabLayoutActivity"></activity>
-        <!-- <service -->
+        <activity android:name=".activity.TextSwitcherActivity"></activity>
+        <activity android:name=".verticaltablayout.VerticalTabLayoutActivity"/> <!-- <service -->
         <!-- android:name=".getui.GeTuiIntentService" -->
         <!-- android:exported="false"></service> -->
         <!-- 在Android 9.0以上默认不支持http通信，为保证SDK正常使用，maven库中已添加如下属性（注：如遇工程报错找不到该属性，将compileSdkVersion改为23以上即可）： -->

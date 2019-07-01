@@ -17,6 +17,7 @@ import android.widget.TextView;
 import com.learzhu.browser.R;
 import com.learzhu.browser.activity.AnimActivity;
 import com.learzhu.browser.activity.RecyclerViewActivity;
+import com.learzhu.browser.activity.TextSwitcherActivity;
 import com.learzhu.browser.activity.VlayoutRecyclerViewActivity;
 import com.learzhu.browser.event.CommonEvent;
 import com.learzhu.browser.utils.ToastUtil;
@@ -116,6 +117,12 @@ public class MainActivityFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 VerticalTabLayoutActivity.actionStart(getActivity());
+            }
+        });
+        headerView.findViewById(R.id.textswitcher).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextSwitcherActivity.actionStart(getActivity());
             }
         });
         mListView.addHeaderView(headerView);
