@@ -1,50 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:tools="http://schemas.android.com/tools"
-          package="com.learzhu.browser">
+        xmlns:tools="http://schemas.android.com/tools"
+        package="com.learzhu.browser">
 
-    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
-    <uses-permission android:name="android.permission.WAKE_LOCK"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
-    <uses-permission android:name="android.permission.INTERNET"/> <!-- 个推需要的权限 -->
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 个推需要的权限 -->
     <!-- iBeancon功能所需权限 -->
-    <uses-permission android:name="android.permission.BLUETOOTH"/>
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/> <!-- 个推3.0电子围栏功能所需权限 -->
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" /> <!-- 个推3.0电子围栏功能所需权限 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!--    Service权限-->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
-        android:name=".LearzhuBrowserApp"
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:usesCleartextTraffic="true">
+            android:name=".LearzhuBrowserApp"
+            android:allowBackup="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme"
+            android:usesCleartextTraffic="true">
         <activity android:name=".activity.TextSwitcherActivity"></activity>
-        <activity android:name=".verticaltablayout.VerticalTabLayoutActivity"/> <!-- <service -->
+        <activity android:name=".verticaltablayout.VerticalTabLayoutActivity" /> <!-- <service -->
         <!-- android:name=".getui.GeTuiIntentService" -->
         <!-- android:exported="false"></service> -->
         <!-- 在Android 9.0以上默认不支持http通信，为保证SDK正常使用，maven库中已添加如下属性（注：如遇工程报错找不到该属性，将compileSdkVersion改为23以上即可）： -->
-        <activity android:name=".notification.NotificationActivity"/>
+        <activity android:name=".notification.NotificationActivity" />
         <activity
-            android:name=".activity.MainActivity"
-            android:label="@string/app_name"
-            android:launchMode="singleTask"
-            android:theme="@style/AppTheme.NoActionBar">
+                android:name=".activity.MainActivity"
+                android:label="@string/app_name"
+                android:launchMode="singleTask"
+                android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.PopuWindowActivity"
-            android:excludeFromRecents="true"
-            android:launchMode="singleInstance"
-            android:taskAffinity=""
-            android:theme="@android:style/Theme.Wallpaper.NoTitleBar">
+                android:name=".activity.PopuWindowActivity"
+                android:excludeFromRecents="true"
+                android:launchMode="singleInstance"
+                android:taskAffinity=""
+                android:theme="@android:style/Theme.Wallpaper.NoTitleBar">
 
             <!-- <extradata> -->
             <!-- <item name="foo" value="bar"/> -->
@@ -55,25 +58,25 @@
         </activity>
 
         <receiver
-            android:name=".broadreceiver.WindowLockedReceiver"
-            android:enabled="true"
-            android:exported="true">
+                android:name=".broadreceiver.WindowLockedReceiver"
+                android:enabled="true"
+                android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.SCREEN_OFF"/>
-                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
-                <action android:name="android.intent.action.SCREEN_ON"/>
-                <action android:name="android.intent.action.USER_PRESENT"/>
+                <action android:name="android.intent.action.SCREEN_OFF" />
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+                <action android:name="android.intent.action.SCREEN_ON" />
+                <action android:name="android.intent.action.USER_PRESENT" />
             </intent-filter>
         </receiver>
         <receiver
-            android:name=".broadreceiver.ScreenBroadcastReceiver"
-            android:enabled="true"
-            android:exported="true"/>
+                android:name=".broadreceiver.ScreenBroadcastReceiver"
+                android:enabled="true"
+                android:exported="true" />
 
-        <activity android:name=".activity.Main2Activity"/>
-        <activity android:name=".activity.Main3Activity"/>
-        <activity android:name=".activity.ImageActivity"/>
-        <activity android:name=".activity.ImageActivity1"/>
+        <activity android:name=".activity.Main2Activity" />
+        <activity android:name=".activity.Main3Activity" />
+        <activity android:name=".activity.ImageActivity" />
+        <activity android:name=".activity.ImageActivity1" />
         <activity android:name=".activity.AnimActivity">
 
             <!-- <intent-filter> -->
@@ -83,21 +86,25 @@
             <!-- <category android:name="android.intent.category.LAUNCHER"/> -->
             <!-- </intent-filter> -->
         </activity>
-        <activity android:name=".activity.RecyclerViewActivity1"/>
-        <activity android:name=".activity.RecyclerViewActivity"/>
-        <activity android:name=".activity.VlayoutRecyclerViewActivity"/>
-        <activity android:name=".activity.AsyncTaskActivity"/>
-        <activity android:name=".glide.GlideActivity"/>
-        <activity android:name=".glide.RecyclerViewHorizontalActivity"/>
+        <activity android:name=".activity.RecyclerViewActivity1" />
+        <activity android:name=".activity.RecyclerViewActivity" />
+        <activity android:name=".activity.VlayoutRecyclerViewActivity" />
+        <activity android:name=".activity.AsyncTaskActivity" />
+        <activity android:name=".glide.GlideActivity" />
+        <activity android:name=".glide.RecyclerViewHorizontalActivity" />
 
         <service
-            android:name=".getui.GetuiPushService"
-            android:exported="true"
-            android:label="PushService"
-            android:process=":pushservice"/>
+                android:name=".getui.GetuiPushService"
+                android:exported="true"
+                android:label="PushService"
+                android:process=":pushservice" />
         <service
-            android:name=".getui.GeTuiIntentService"
-            android:permission="android.permission.BIND_JOB_SERVICE"/>
+                android:name=".getui.GeTuiIntentService"
+                android:permission="android.permission.BIND_JOB_SERVICE" />
+        <service
+                android:name=".service.CustomJobIntentService"
+                android:permission="android.permission.BIND_JOB_SERVICE" />
+
     </application>
 
 </manifest>

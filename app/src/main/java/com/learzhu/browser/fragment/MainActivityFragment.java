@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +19,7 @@ import com.learzhu.browser.activity.RecyclerViewActivity;
 import com.learzhu.browser.activity.TextSwitcherActivity;
 import com.learzhu.browser.activity.VlayoutRecyclerViewActivity;
 import com.learzhu.browser.event.CommonEvent;
+import com.learzhu.browser.service.CustomJobIntentService;
 import com.learzhu.browser.utils.ToastUtil;
 import com.learzhu.browser.verticaltablayout.VerticalTabLayoutActivity;
 
@@ -41,7 +41,7 @@ public class MainActivityFragment extends Fragment {
     ArrayAdapter adapter = null;
     ArrayList<String> list1 = new ArrayList<String>();
 
-    private TextView mTextView1, mTextView2, mTextViewD, mTextViewE, mFTv;
+    private TextView mTextView1, mTextView2, mTextViewD, mTextViewE, mFTv, mTvService;
 
     private View mView;
 
@@ -64,6 +64,7 @@ public class MainActivityFragment extends Fragment {
         mTextViewD = (TextView) headerView.findViewById(R.id.headerd_tv);
         mTextViewE = (TextView) headerView.findViewById(R.id.headere_tv);
         mFTv = (TextView) headerView.findViewById(R.id.headerf_tv);
+//        mFTv = (TextView) headerView.findViewById(R.id.text_open_o_service);
         String s1 = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
         String s2 = "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB";
 //        mTextView2.setText(s1 + ":" + s2);
@@ -123,6 +124,14 @@ public class MainActivityFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 TextSwitcherActivity.actionStart(getActivity());
+            }
+        });
+        headerView.findViewById(R.id.text_open_o_service).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.putExtra("data", "Learzhu");
+                CustomJobIntentService.enqueueWork(getActivity(), intent);
             }
         });
         mListView.addHeaderView(headerView);
