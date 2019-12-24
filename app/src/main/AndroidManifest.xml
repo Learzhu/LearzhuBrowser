@@ -12,9 +12,7 @@
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" /> <!-- 个推3.0电子围栏功能所需权限 -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-
-    <!--    Service权限-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- Service权限 -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
@@ -25,7 +23,8 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true">
-        <activity android:name=".activity.TextSwitcherActivity"></activity>
+        <activity android:name=".tts.TTSActivity"></activity>
+        <activity android:name=".activity.TextSwitcherActivity" />
         <activity android:name=".verticaltablayout.VerticalTabLayoutActivity" /> <!-- <service -->
         <!-- android:name=".getui.GeTuiIntentService" -->
         <!-- android:exported="false"></service> -->
@@ -104,7 +103,6 @@
         <service
                 android:name=".service.CustomJobIntentService"
                 android:permission="android.permission.BIND_JOB_SERVICE" />
-
     </application>
 
 </manifest>

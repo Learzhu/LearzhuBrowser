@@ -20,6 +20,7 @@ import com.learzhu.browser.activity.TextSwitcherActivity;
 import com.learzhu.browser.activity.VlayoutRecyclerViewActivity;
 import com.learzhu.browser.event.CommonEvent;
 import com.learzhu.browser.service.CustomJobIntentService;
+import com.learzhu.browser.tts.TTSActivity;
 import com.learzhu.browser.utils.ToastUtil;
 import com.learzhu.browser.verticaltablayout.VerticalTabLayoutActivity;
 
@@ -41,7 +42,7 @@ public class MainActivityFragment extends Fragment {
     ArrayAdapter adapter = null;
     ArrayList<String> list1 = new ArrayList<String>();
 
-    private TextView mTextView1, mTextView2, mTextViewD, mTextViewE, mFTv, mTvService;
+    private TextView mTextView1, mTextView2, mTextViewD, mTextViewE, mFTv, mTvService, mTTSTv;
 
     private View mView;
 
@@ -64,6 +65,7 @@ public class MainActivityFragment extends Fragment {
         mTextViewD = (TextView) headerView.findViewById(R.id.headerd_tv);
         mTextViewE = (TextView) headerView.findViewById(R.id.headere_tv);
         mFTv = (TextView) headerView.findViewById(R.id.headerf_tv);
+        mTTSTv = (TextView) headerView.findViewById(R.id.tts_tv);
 //        mFTv = (TextView) headerView.findViewById(R.id.text_open_o_service);
         String s1 = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
         String s2 = "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB";
@@ -112,6 +114,13 @@ public class MainActivityFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 showCustomerDialog();
+            }
+        });
+        //TTS 测试DEMO
+        mTTSTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TTSActivity.actionStart(getActivity());
             }
         });
         headerView.findViewById(R.id.headerg_tv).setOnClickListener(new View.OnClickListener() {
