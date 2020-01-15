@@ -19,6 +19,7 @@ import com.learzhu.browser.activity.RecyclerViewActivity;
 import com.learzhu.browser.activity.TextSwitcherActivity;
 import com.learzhu.browser.activity.VlayoutRecyclerViewActivity;
 import com.learzhu.browser.event.CommonEvent;
+import com.learzhu.browser.live_transcribe.LiveTranscribeActivity;
 import com.learzhu.browser.service.CustomJobIntentService;
 import com.learzhu.browser.tts.TTSActivity;
 import com.learzhu.browser.utils.ToastUtil;
@@ -42,7 +43,7 @@ public class MainActivityFragment extends Fragment {
     ArrayAdapter adapter = null;
     ArrayList<String> list1 = new ArrayList<String>();
 
-    private TextView mTextView1, mTextView2, mTextViewD, mTextViewE, mFTv, mTvService, mTTSTv;
+    private TextView mTextView1, mTextView2, mTextViewD, mTextViewE, mFTv, mTvService, mTTSTv, mSTTTv;
 
     private View mView;
 
@@ -66,6 +67,7 @@ public class MainActivityFragment extends Fragment {
         mTextViewE = (TextView) headerView.findViewById(R.id.headere_tv);
         mFTv = (TextView) headerView.findViewById(R.id.headerf_tv);
         mTTSTv = (TextView) headerView.findViewById(R.id.tts_tv);
+        mSTTTv = (TextView) headerView.findViewById(R.id.tv_stt);
 //        mFTv = (TextView) headerView.findViewById(R.id.text_open_o_service);
         String s1 = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
         String s2 = "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB";
@@ -121,6 +123,12 @@ public class MainActivityFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 TTSActivity.actionStart(getActivity());
+            }
+        });
+        mSTTTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LiveTranscribeActivity.actionStart(getActivity());
             }
         });
         headerView.findViewById(R.id.headerg_tv).setOnClickListener(new View.OnClickListener() {

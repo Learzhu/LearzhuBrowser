@@ -23,7 +23,8 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true">
-        <activity android:name=".tts.TTSActivity"></activity>
+        <activity android:name=".live_transcribe.LiveTranscribeActivity"></activity>
+        <activity android:name=".tts.TTSActivity" />
         <activity android:name=".activity.TextSwitcherActivity" />
         <activity android:name=".verticaltablayout.VerticalTabLayoutActivity" /> <!-- <service -->
         <!-- android:name=".getui.GeTuiIntentService" -->
