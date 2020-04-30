@@ -1,6 +1,7 @@
 package com.learzhu.browser.test;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -31,10 +32,23 @@ public class ListTest {
         testList(list);
 
         testList(listOragin);
+        testSubList();
     }
 
     public static void testList(List list) {
         Object o = list.get(0);
         System.out.println(o.toString());
+    }
+
+    public static void testSubList() {
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+//        List<Integer> list1 = list.subList(0, 1);
+        List<Integer> list2 = list.subList(3, list.size());
+//        List<Integer> list3 = list.subList(3, list.size() + 1);
+        Collections.sort(list2);
     }
 }

@@ -1,8 +1,10 @@
 package com.learzhu.browser.fragment;
 
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -20,6 +22,7 @@ import com.learzhu.browser.activity.TextSwitcherActivity;
 import com.learzhu.browser.activity.VlayoutRecyclerViewActivity;
 import com.learzhu.browser.event.CommonEvent;
 import com.learzhu.browser.live_transcribe.LiveTranscribeActivity;
+import com.learzhu.browser.notification.NotificationUtil;
 import com.learzhu.browser.service.CustomJobIntentService;
 import com.learzhu.browser.tts.TTSActivity;
 import com.learzhu.browser.utils.ToastUtil;
@@ -149,6 +152,16 @@ public class MainActivityFragment extends Fragment {
                 Intent intent = new Intent();
                 intent.putExtra("data", "Learzhu");
                 CustomJobIntentService.enqueueWork(getActivity(), intent);
+            }
+        });
+        headerView.findViewById(R.id.tv_notification).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //创建一个意图
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.baidu.com"));
+                PendingIntent pIntent = PendingIntent.getActivity(getActivity(), 1, intent, 0);
+                NotificationUtil.createAndShowNotification(getActivity(), null, null, "chat",
+                        "chat_test", pIntent, R.drawable.push, R.drawable.push_small, "通知", "内容");
             }
         });
         mListView.addHeaderView(headerView);
