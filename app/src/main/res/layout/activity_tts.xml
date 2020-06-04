@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".tts.TTSActivity">
+
+
+    <Button
+            android:id="@+id/tts_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Text To Speech"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_tts_content" />
+
+    <EditText
+            android:id="@+id/et_tts_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_editor_absoluteX="100dp"
+            app:layout_editor_absoluteY="200dp" />
+</android.support.constraint.ConstraintLayout>

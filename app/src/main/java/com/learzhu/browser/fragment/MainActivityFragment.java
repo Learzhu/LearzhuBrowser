@@ -1,11 +1,12 @@
 package com.learzhu.browser.fragment;
 
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +21,10 @@ import com.learzhu.browser.activity.RecyclerViewActivity;
 import com.learzhu.browser.activity.TextSwitcherActivity;
 import com.learzhu.browser.activity.VlayoutRecyclerViewActivity;
 import com.learzhu.browser.event.CommonEvent;
+import com.learzhu.browser.live_transcribe.LiveTranscribeActivity;
+import com.learzhu.browser.notification.NotificationUtil;
+import com.learzhu.browser.service.CustomJobIntentService;
+import com.learzhu.browser.tts.TTSActivity;
 import com.learzhu.browser.utils.ToastUtil;
 import com.learzhu.browser.verticaltablayout.VerticalTabLayoutActivity;
 
@@ -41,7 +46,7 @@ public class MainActivityFragment extends Fragment {
     ArrayAdapter adapter = null;
     ArrayList<String> list1 = new ArrayList<String>();
 
-    private TextView mTextView1, mTextView2, mTextViewD, mTextViewE, mFTv;
+    private TextView mTextView1, mTextView2, mTextViewD, mTextViewE, mFTv, mTvService, mTTSTv, mSTTTv;
 
     private View mView;
 
@@ -64,6 +69,9 @@ public class MainActivityFragment extends Fragment {
         mTextViewD = (TextView) headerView.findViewById(R.id.headerd_tv);
         mTextViewE = (TextView) headerView.findViewById(R.id.headere_tv);
         mFTv = (TextView) headerView.findViewById(R.id.headerf_tv);
+        mTTSTv = (TextView) headerView.findViewById(R.id.tts_tv);
+        mSTTTv = (TextView) headerView.findViewById(R.id.tv_stt);
+//        mFTv = (TextView) headerView.findViewById(R.id.text_open_o_service);
         String s1 = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
         String s2 = "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB";
 //        mTextView2.setText(s1 + ":" + s2);
@@ -113,6 +121,19 @@ public class MainActivityFragment extends Fragment {
                 showCustomerDialog();
             }
         });
+        //TTS 测试DEMO
+        mTTSTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TTSActivity.actionStart(getActivity());
+            }
+        });
+        mSTTTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LiveTranscribeActivity.actionStart(getActivity());
+            }
+        });
         headerView.findViewById(R.id.headerg_tv).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -123,6 +144,24 @@ public class MainActivityFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 TextSwitcherActivity.actionStart(getActivity());
+            }
+        });
+        headerView.findViewById(R.id.text_open_o_service).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.putExtra("data", "Learzhu");
+                CustomJobIntentService.enqueueWork(getActivity(), intent);
+            }
+        });
+        headerView.findViewById(R.id.tv_notification).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //创建一个意图
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.baidu.com"));
+                PendingIntent pIntent = PendingIntent.getActivity(getActivity(), 1, intent, 0);
+                NotificationUtil.createAndShowNotification(getActivity(), null, null, "chat",
+                        "chat_test", pIntent, R.drawable.push, R.drawable.push_small, "通知", "内容");
             }
         });
         mListView.addHeaderView(headerView);

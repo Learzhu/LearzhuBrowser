@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextSwitcher;
 import android.widget.TextView;
 import android.widget.ViewSwitcher;
@@ -31,6 +32,7 @@ public class TextSwitcherActivity extends AppCompatActivity {
     List<String> texts;
     private int marker;
 
+    ImageView mImageView;
 
     public static void actionStart(Context context) {
         Intent intent = new Intent(context, TextSwitcherActivity.class);
@@ -56,6 +58,20 @@ public class TextSwitcherActivity extends AppCompatActivity {
 //        switcher.setInAnimation();
 //        switcher.setOutAnimation();
         new TextSwitcherAnimation(switcher, texts).create();
+
+        mImageView = findViewById(R.id.save_img);
+        mImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //保存图片
+//                MediaScannerConnection.scanFile(this,
+//                        arrayOf(picFile.absolutePath),
+//                        arrayOf("image/jpeg"), {path, uri ->
+//                                Log.i("cxmyDev", "onScanCompleted : " + path)
+//                        });
+
+            }
+        });
     }
 
     private Handler handler = new Handler();
