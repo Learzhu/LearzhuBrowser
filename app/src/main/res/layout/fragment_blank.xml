@@ -1,9 +1,9 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:tools="http://schemas.android.com/tools"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             tools:background="@color/colorAccent"
-             tools:context="com.learzhu.browser.fragment.BlankFragment">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:background="@color/colorAccent"
+    tools:context="com.learzhu.browser.fragment.BlankFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
@@ -13,7 +13,7 @@
         android:text="@string/hello_blank_fragment"
         tools:targetApi="M"
         tools:text="aaaaaa\r\njjjhhhh\r"
-        tools:visibility="gone"/>
+        tools:visibility="gone" />
 
     <!--tools:text="AAAAAAAAAAAAAAAAAAAAAAAABBBBBBBBBBBBBBBBBBB/nCCCCCCCCCCCAAAAAAAAAAAAAAAAAAAAAAAABBBBBBBBBBBBBBBBBBBCCCCCCCCCCC"/>-->
     <LinearLayout
@@ -34,7 +34,7 @@
             android:shadowRadius="1"
             android:text="Test Shadow"
             android:textColor="#ffffffff"
-            android:textSize="60sp"/>
+            android:textSize="60sp" />
 
         <TextView
             android:id="@+id/test_shadow2"
@@ -47,7 +47,7 @@
             android:shadowRadius="1"
             android:text="Test Shadow"
             android:textColor="#ffffffff"
-            android:textSize="60sp"/>
+            android:textSize="60sp" />
 
         <TextView
             android:id="@+id/test_shadow3"
@@ -60,7 +60,7 @@
             android:shadowRadius="1"
             android:text="Test Shadow"
             android:textColor="#ffffffff"
-            android:textSize="60sp"/>
+            android:textSize="60sp" />
 
     </LinearLayout>
 
@@ -68,5 +68,5 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:background="@drawable/shadow"
-        android:text="我是中国人"/>
+        android:text="我是中国人" />
 </FrameLayout>
