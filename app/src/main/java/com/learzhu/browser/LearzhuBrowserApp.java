@@ -4,6 +4,8 @@ import android.app.Application;
 import android.content.Context;
 import android.support.multidex.MultiDex;
 
+import com.mob.MobSDK;
+
 import org.litepal.LitePal;
 
 /**
@@ -26,6 +28,7 @@ public class LearzhuBrowserApp extends Application {
         super.onCreate();
 //        MultiDex.install(this);
         LitePal.initialize(this);
+        MobSDK.init(this);
     }
     //    public static final String KEY_DEX2_SHA1 = "dex2-SHA1-Digest";
 //    @Override

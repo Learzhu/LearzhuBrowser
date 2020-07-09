@@ -10,12 +10,19 @@ MobSDK {
         loopShare true
         devInfo {
             Wechat {
-                appId "wx4868b35061f87885"
-                appSecret "64020361b8ec4c99936c0e3999a9f249"
-                userName "gh_afb25ac019c9"
+                appId "wxe5ede801fef9937b"
+                appSecret "0d8d7de3ce6d071a4b1eb55f663d9f31"
+                userName "gh_1a39566f0835"
                 path "pages/index/index.html?id=1"
                 withShareTicket true
                 miniprogramType 2
+
+//                appId "wx4868b35061f87885"
+//                appSecret "64020361b8ec4c99936c0e3999a9f249"
+//                userName "gh_afb25ac019c9"
+//                path "pages/index/index.html?id=1"
+//                withShareTicket true
+//                miniprogramType 2
             }
             QQ {
                 appId "100371282"

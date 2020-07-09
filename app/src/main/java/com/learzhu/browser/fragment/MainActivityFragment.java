@@ -34,6 +34,10 @@ import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
 
+import cn.sharesdk.framework.Platform;
+import cn.sharesdk.framework.ShareSDK;
+import cn.sharesdk.wechat.friends.Wechat;
+
 /**
  * A placeholder fragment containing a simple view.
  */
@@ -162,6 +166,24 @@ public class MainActivityFragment extends Fragment {
                 PendingIntent pIntent = PendingIntent.getActivity(getActivity(), 1, intent, 0);
                 NotificationUtil.createAndShowNotification(getActivity(), null, null, "chat",
                         "chat_test", pIntent, R.drawable.push, R.drawable.push_small, "通知", "内容");
+            }
+        });
+        headerView.findViewById(R.id.tv_share).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Platform.ShareParams sp = new Platform.ShareParams();
+                sp.setTitle("测试分享的标题");
+                sp.setTitleUrl("http://sharesdk.cn"); // 标题的超链接
+                sp.setText("测试分享的文本");
+                sp.setImageUrl("http://www.someserver.com/测试图片网络地址.jpg");
+                sp.setSite("发布分享的网站名称");
+                sp.setSiteUrl("发布分享网站的地址");
+                sp.setWxMiniProgramType(2);
+                sp.setWxUserName("gh_afb25ac019c9");
+                sp.setWxPath("pages/index/index.html?id=1");
+                sp.setShareType(Platform.SHARE_WXMINIPROGRAM);
+                Platform wechat = ShareSDK.getPlatform(Wechat.NAME);
+                wechat.share(sp);
             }
         });
         mListView.addHeaderView(headerView);
