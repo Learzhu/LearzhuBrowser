@@ -24,7 +24,8 @@
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true"
             tools:replace="android:name">
-        <activity android:name=".live_transcribe.LiveTranscribeActivity"></activity>
+        <activity android:name=".activity.Main4Activity"></activity>
+        <activity android:name=".live_transcribe.LiveTranscribeActivity" />
         <activity android:name=".tts.TTSActivity" />
         <activity android:name=".activity.TextSwitcherActivity" />
         <activity android:name=".verticaltablayout.VerticalTabLayoutActivity" /> <!-- <service -->
