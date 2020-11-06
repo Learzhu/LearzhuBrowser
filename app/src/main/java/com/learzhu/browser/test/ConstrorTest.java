@@ -18,7 +18,7 @@ public class ConstrorTest {
     public ConstrorTest(A a) {
         mA = a;
     }
-  
+
     public ConstrorTest() {
         mA = new A(2);
     }

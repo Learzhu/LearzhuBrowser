@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/LearzhuBrowser.iml" filepath="$PROJECT_DIR$/LearzhuBrowser.iml" group="LearzhuBrowser" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="LearzhuBrowser/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AndroidProjectsCollection.LearzhuBrowser.iml" filepath="$PROJECT_DIR$/.idea/modules/AndroidProjectsCollection.LearzhuBrowser.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/LearzhuBrowser.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/LearzhuBrowser.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib/LearzhuBrowser.lib.iml" filepath="$PROJECT_DIR$/.idea/modules/lib/LearzhuBrowser.lib.iml" />
     </modules>
   </component>
 </project>

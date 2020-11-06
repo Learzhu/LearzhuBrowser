@@ -33,7 +33,7 @@ public class StringBlankSpaceTest {
 
     private static String testString2 = "“小运，你好像变了个人似的。”杨玉环看着方运，隐隐有些担忧。\n" +
             "　　\n" +
-            "　　"+"  ";
+            "　　" + "  ";
 
     public static void main(String args[]) {
         System.out.println("1. String.trim() " + testString.trim());

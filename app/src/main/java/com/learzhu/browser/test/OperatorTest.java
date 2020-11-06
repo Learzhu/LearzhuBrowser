@@ -19,6 +19,6 @@ public class OperatorTest {
         System.out.println(System.currentTimeMillis());
         System.out.println(x / 2);
         System.out.println(System.currentTimeMillis());
-        System.out.println(0>>1);
+        System.out.println(0 >> 1);
     }
 }

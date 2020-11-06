@@ -17,7 +17,7 @@ public class PushMsg {
      * "sendType" : "ADVERT_BACK_CAPTIAL"
      * "content" : "【广告积分退回】您的广告位审核未通过！广告积分退回"
      * }
-     *
+     * <p>
      * 删除附加字段
      */
 

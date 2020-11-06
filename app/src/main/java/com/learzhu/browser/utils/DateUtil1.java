@@ -178,14 +178,14 @@ public class DateUtil1 {
             } else if (type == SHOW_TYPE_CALL_LOG || type == SHOW_TYPE_COMPLEX) {
                 dateStr = y + /* 年 */"/" + (m < 10 ? "0" + m : m) + /* 月 */"/"
                         + (d < 10 ? "0" + d : d) + /* 日 */"  "/*
-                                                                 * + (hour < 10
-																 * ? "0" + hour
-																 * : hour) + ":"
-																 * + (minute <
-																 * 10 ? "0" +
-																 * minute :
-																 * minute)
-																 */;
+                 * + (hour < 10
+                 * ? "0" + hour
+                 * : hour) + ":"
+                 * + (minute <
+                 * 10 ? "0" +
+                 * minute :
+                 * minute)
+                 */;
             } else if (type == SHOW_TYPE_CALL_DETAIL) {
                 dateStr = y + "/" + (m < 10 ? "0" + m : m) + "/"
                         + (d < 10 ? "0" + d : d);

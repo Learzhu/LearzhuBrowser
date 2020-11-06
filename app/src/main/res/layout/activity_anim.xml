@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="100dp">
+    android:layout_width="match_parent"
+    android:layout_height="100dp">
     <!--下拉刷新-->
     <TextView
         android:id="@+id/tv_refresh_pull"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="下拉刷新"/>
+        android:text="下拉刷新" />
 
     <RelativeLayout
         android:id="@+id/rl_refresh"
@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:background="@mipmap/ic_novel_refresh_head_red_bobble"
-            android:visibility="invisible"/>
+            android:visibility="invisible" />
 
         <ImageView
             android:id="@+id/iv_refresh_right"
@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:background="@mipmap/ic_novel_refresh_head_blue_bobble"
-            android:visibility="invisible"/>
+            android:visibility="invisible" />
 
     </RelativeLayout>
 
@@ -102,20 +102,20 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/ic_novel_refresh_head_done"/>
+            android:src="@mipmap/ic_novel_refresh_head_done" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:text="刷新完成"/>
+            android:text="刷新完成" />
     </LinearLayout>
 
     <Button
         android:id="@+id/btn_start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="开始动画"/>
+        android:text="开始动画" />
 
     <TextView
         android:id="@+id/tv_test"
@@ -123,5 +123,5 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:background="@color/colorPrimary"
-        android:text="!!!!!!!!!!"/>
+        android:text="!!!!!!!!!!" />
 </RelativeLayout>

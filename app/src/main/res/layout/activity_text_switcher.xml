@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="@drawable/bg_linearlayout_white_with_shadow"
-              android:orientation="vertical"
-              tools:context=".activity.TextSwitcherActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_linearlayout_white_with_shadow"
+    android:orientation="vertical"
+    tools:context=".activity.TextSwitcherActivity">
 
     <TextSwitcher
         android:id="@+id/textswitcher"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:background="@color/colorAccent"/>
+        tools:background="@color/colorAccent" />
 
     <ImageView
         android:id="@+id/save_img"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_image_scaletype_src"/>
+        android:src="@drawable/ic_image_scaletype_src" />
 </LinearLayout>

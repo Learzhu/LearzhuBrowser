@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:orientation="vertical">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <ImageView
         android:id="@+id/img_content"
@@ -11,7 +11,7 @@
         android:layout_height="80dp"
         android:layout_margin="3dp"
         android:padding="3dp"
-        android:scaleType="fitXY"/>
+        android:scaleType="fitXY" />
 
     <TextView
         android:id="@+id/tv_position"
@@ -22,5 +22,5 @@
         android:text="100"
         android:textColor="@color/colorPrimary"
         android:textSize="20sp"
-        tools:visibility="visible"/>
+        tools:visibility="visible" />
 </LinearLayout>
