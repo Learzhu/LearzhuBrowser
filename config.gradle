@@ -3,7 +3,7 @@ ext {
     android = [
             compileSdkVersion      : 28,
             buildToolsVersion      : "28.0.3",
-            minSdkVersion          : 15,
+            minSdkVersion          : 16,
             //避免 26 27上出现ECClientService (has extras) }: app is in background uid UidRecord错误
             targetSdkVersion       : 26,
             versionCode            : 20,
