@@ -19,13 +19,21 @@ import java.util.List;
 public class SortTest {
     public static void main(String args[]) {
         List<Student> list = new ArrayList<>();
-        list.add(new Student("#1", 1));
-        list.add(new Student("w", 1));
-        list.add(new Student("#我", 1));
-        list.add(new Student("我的好", 1));
-        list.add(new Student("是个", 1));
-        list.add(new Student("#7", 1));
-        list.add(new Student("88", 1));
+//        list.add(new Student("#1", 1));
+//        list.add(new Student("w", 1));
+//        list.add(new Student("#我", 1));
+//        list.add(new Student("我的好", 1));
+//        list.add(new Student("是个", 1));
+//        list.add(new Student("#7", 1));
+//        list.add(new Student("88", 1));
+
+
+        list.add(new Student("a", 1));
+//        list.add(new Student("b", 4));
+//        list.add(new Student("d", 5));
+//        list.add(new Student("c", 9));
+
+
         Collections.sort(list, new NameComparator());
         for (Student student : list) {
             System.out.println(student.toString());
@@ -56,10 +64,21 @@ class NameComparator implements Comparator<Student> {
 //        else
 //            return o1.name.compareTo(o2.name);
 //    }
-        if (o1.name.contains("#")) {
+
+
+//        if (o1.name.contains("#")) {
+//            return -1;
+//        } else {
+//            return o1.name.compareTo(o2.name);
+//        }
+
+        int f = o1.num - o2.num;
+        if (f == 0) {
+            return 0;
+        } else if (f > 0) {
             return -1;
         } else {
-            return o1.name.compareTo(o2.name);
+            return 1;
         }
     }
 }
