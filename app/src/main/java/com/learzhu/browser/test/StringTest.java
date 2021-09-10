@@ -2,6 +2,9 @@ package com.learzhu.browser.test;
 
 import com.learzhu.browser.utils.StringUtils;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 /**
  * ${className}.java是极搜浏览器的$DES$类。
  *
@@ -38,6 +41,41 @@ public class StringTest {
     static String str5 = "E:\\Android\\AOSP\\android-7.1.0_r1\\android-7.1.0_r1\\prebuilts\\eclipse\\mavenplugins\\tycho\\tycho-dependencies-m2repo\\org\\eclipse\\tycho\\tycho-bundles-external\\0.20.0\\eclipse\\plugins\\org.eclipse.core.runtime.compatibility.registry_3.5.200.v20130514-1256\\.api_description\n";
 
     public static void main(String args[]) {
+//        System.out.println(StringUtils.getNumberList("今天买了300个30元的59"));
+        ArrayList<String> list = new ArrayList<>();
+        list.add("1111");
+        list.add("1111");
+//        list.add("1111111111111111111111嘉兴中山店");
+//        list.add("20海盐海兴东路店");
+//        list.add("海宁12二院店");
+//        list.add("海宁2康华医院店");
+//        list.add("01");
+//        list.add("1");
+//        list.add("10");
+//        list.add("111111嘉兴中山店");
+//        list.add("000001嘉兴中山店");
+//        list.add("#12当");
+//        list.add("@12当");
+//        list.add("中国12当");
+//        list.add("中国2当");
+//        list.add("12");
+//        list.add("a");
+//        list.add("2");
+//        list.add("b");
+        Collections.sort(list, StringUtils.naturalOrdering());
+//        Collections.sort(list, new Comparator<String>() {
+//            @Override
+//            public int compare(String o1, String o2) {
+//                return StringUtils.compareNumericalString(o1, o2);
+//            }
+//        });
+        for (String string : list) {
+            System.out.println(string);
+        }
+
+
+        String ss = "2.食品拆封后未封口保存，存放于冰箱的食品裸露或五常盒未加盖保存                            3.按";
+        System.out.println(ss.contains("\n"));
         testSplit1();
         //替换空格之后
         System.out.println("++++++" + StringUtils.formatContent(str));

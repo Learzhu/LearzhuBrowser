@@ -19,6 +19,7 @@ import java.util.Locale;
 public class TestTime {
     public static SimpleDateFormat formatYear = new SimpleDateFormat("yyyy", Locale.CHINA);
     public static SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss", Locale.CHINA);
+    public static SimpleDateFormat formatWithWeek = new SimpleDateFormat("yyyy-MM-dd EE HH mm", Locale.CHINA);
     public static SimpleDateFormat weatherDayFormat = new SimpleDateFormat("yyyyMMdd", Locale.CHINA);
     private static SimpleDateFormat detailDateFormat = new SimpleDateFormat("MM-dd HH:mm", Locale.CHINA);
     private static SimpleDateFormat detailDateFormatWithYear = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.CHINA);
@@ -61,6 +62,9 @@ public class TestTime {
     static String time1 = "20170503094607";
 
     public static void main(String args[]) {
+        Calendar calendar = Calendar.getInstance();
+        System.out.println(formatWithWeek.format(calendar.getTime()));
+
         System.out.println("time----" + time);
         System.out.println("getPublishTime()" + getPublishTime(time));
         System.out.println("getYearsAgoPublishTime()" + getYearsAgoPublishTime(time));
